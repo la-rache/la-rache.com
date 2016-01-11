@@ -96,6 +96,177 @@ textarea {
    ========================================================================== */
 
 
+body {
+
+  margin: 0;
+  padding: 0;
+  text-align:center;
+}
+
+hr{
+	height: 0;
+	border: 0;
+	border-top: 1px solid #0550A5;
+	height: 1px;
+	color: #0550A5;
+	background-color: #0550A5;
+	}
+
+body, td {
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  font-size: 10pt;
+}
+img {border: none;}
+h1 {font-size: 150%;}
+h2 {font-size: 130%;}
+h3 {font-size: 120%;}
+h4 {font-size: 110%;}
+h5 {font-size: 100%;}
+
+a {
+	color: #35B;
+	text-decoration: none;
+}
+a:hover {
+	color: #B53;
+}
+
+#page {
+	background-color:#FFF;
+	border: solid 1px #CCC;
+	border-top: none;
+	background-color: #FFF;
+	width: 900px;
+	margin: 0 auto 16px auto;
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+	padding: 0;
+	text-align: left;
+}
+
+#top {
+	width: 900px;
+	height: 65px;
+	background-color: #FFF;
+	border-bottom: none;
+	margin:0;
+	padding: 10px 0 0 0;
+}
+
+#mid {
+	width: 900px;
+	border-bottom: 1px solid #CCC;
+	background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/bg.png);
+	margin:0;
+	madding: 0;
+}
+
+#side {
+	width: 180px;
+	float: left;
+	margin:0;
+	padding: 5px 10px 5px 10px;
+}
+
+#main {
+	width: 676px;
+	float: right;
+	margin:0;
+	padding: 7px;
+	text-align: justify;
+}
+
+#break {
+	clear: both;
+}
+
+#bot {
+	width: 900px;
+	border-bottom: 1px solid #777;
+	font-size: 75%;
+	text-align: center;
+	margin:0;
+	mapping: 0;
+	color: #225;
+}
+
+#top h1 {
+	margin: 0;
+	padding: 0 0 0 10px;
+	color: #000000;
+	font-size: 24px;
+}
+#top h2 {
+	margin: 0;
+	padding: 4px 0 5px 10px;
+	color: #000000;
+	font-size: 90%;
+}
+
+/* Menu */
+#side a {
+	text-decoration : none;
+	color: #ffffff;
+}
+
+.zul {
+	padding: 0;
+	margin: 10px 0 0 0;
+	list-style: none;
+}
+.zli1,.zli2,.zli3,.zli4 {
+	/*background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/pge0.png);*/
+	/*background-repeat: no-repeat;
+	background-color : #0550A5;
+	padding-left: 14px;*/
+		display : block;
+	margin-top : 0.15em;
+	padding-left : 15px;
+	color : #ffffff;
+	background-color : #0550A5;
+
+}
+.zon {
+	/*background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/pge1.png);*/
+		display : block;
+	margin-top : 0.15em;
+	padding-left : 15px;
+	color : #ffffff;
+	background-color : #0550A5;
+}
+.zli1 {
+	margin-left: 0px;
+}
+.zli2 {
+	margin-left: 16px;
+}
+.zli3 {
+	margin-left: 32px;
+}
+.zli4 {
+	margin-left: 48px;
+}
+
+#zadmin {
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	padding: 0 2px;
+	margin: 3px 0 0 0;
+}
+.ztable {
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	padding: 0 2px;
+	margin: 5px 0;
+	width: 100%;
+}
+.zalert {
+	border: 1px solid #C00;
+	background-color: #FEA;
+	padding: 0 2px;
+}
+
+
 
 
 
