@@ -1,0 +1,24 @@
+{
+  "name": "la-rache.com",
+  "version": "0.0.0",
+  "description": "Site web la-rache.com",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-text-replace": "^0.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feraudet/la-rache.com.git"
+  },
+  "keywords": [
+    "la-rache"
+  ],
+  "author": "Cyril Feraudet",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/feraudet/la-rache.com/issues"
+  }
+}
