@@ -12,9 +12,16 @@ module.exports = function(grunt) {
           }
         }]
       }
+    },
+    copy: {
+      js: { expand: true, src: '**', dest: 'build/js/', cwd: 'src/js/' },
+      img: { expand: true, src: '**', dest: 'build/img/', cwd: 'src/img/' },
+      css: { expand: true, src: '**', dest: 'build/css/', cwd: 'src/css/' }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.registerTask('default', ['replace', 'copy']);
 };
 
