@@ -16,7 +16,9 @@ module.exports = function(grunt) {
     copy: {
       js: { expand: true, src: '**', dest: 'build/js/', cwd: 'src/js/' },
       img: { expand: true, src: '**', dest: 'build/img/', cwd: 'src/img/' },
-      css: { expand: true, src: '**', dest: 'build/css/', cwd: 'src/css/' }
+      css: { expand: true, src: '**', dest: 'build/css/', cwd: 'src/css/' },
+      other: { expand: true, src: '**', dest: 'build/', cwd: 'src/others/' },
+      favicon: { expand: true, src: '**', dest: 'build/', cwd: 'src/favicon/' }
     }
   });
 
