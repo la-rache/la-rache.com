@@ -1,4 +1,7 @@
 # la-rache.com
+
+[![Build Status](https://travis-ci.org/la-rache/la-rache.com.svg)](https://travis-ci.org/la-rache/la-rache.com)
+
 Voici comment contribuer au site web la-rache.com
 
 Installation de l'environnement de travail
