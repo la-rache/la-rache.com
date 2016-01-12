@@ -149,7 +149,7 @@ a:hover {
 #mid {
 	width: 900px;
 	border-bottom: 1px solid #CCC;
-	background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/bg.png);
+/*	background-image: url(../img/bg.png);*/
 	margin:0;
 	madding: 0;
 }
@@ -169,7 +169,7 @@ a:hover {
 	text-align: justify;
 }
 
-#break {
+.break {
 	clear: both;
 }
 
@@ -204,15 +204,15 @@ a:hover {
 
 .zul {
 	padding: 0;
+  padding-top: 13px;
 	margin: 10px 0 0 0;
 	list-style: none;
 }
 .zli1,.zli2,.zli3,.zli4 {
-	/*background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/pge0.png);*/
-	/*background-repeat: no-repeat;
 	background-color : #0550A5;
 	padding-left: 14px;*/
-		display : block;
+	display : block;
+  text-align: left;
 	margin-top : 0.15em;
 	padding-left : 15px;
 	color : #ffffff;
@@ -260,7 +260,13 @@ a:hover {
 }
 
 
+#side {
+  text-align: center;
+}
 
+#side .logo_web2_0 {
+  margin-top: 28px;
+}
 
 
 
