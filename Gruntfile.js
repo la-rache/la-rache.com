@@ -19,11 +19,16 @@ module.exports = function(grunt) {
       css: { expand: true, src: '**', dest: 'build/css/', cwd: 'src/css/' },
       other: { expand: true, src: '**', dest: 'build/', cwd: 'src/others/' },
       favicon: { expand: true, src: '**', dest: 'build/', cwd: 'src/favicon/' }
+    },
+    htmllint: {
+      all: ["build/*.html"]
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.registerTask('test', ['htmllint']);
   grunt.registerTask('default', ['replace', 'copy']);
 };
 
