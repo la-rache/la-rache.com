@@ -22,12 +22,23 @@ module.exports = function(grunt) {
     },
     htmllint: {
       all: ["build/*.html"]
+    },
+    watch: {
+      all: {
+        files: ['src/**'],
+        tasks: ['replace', 'copy', 'test'],
+        options: {
+          spawn: false,
+        },
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
   grunt.registerTask('test', ['htmllint']);
   grunt.registerTask('default', ['replace', 'copy']);
 };
