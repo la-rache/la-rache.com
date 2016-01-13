@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/la-rache/la-rache.com.svg)](https://travis-ci.org/la-rache/la-rache.com)
 
-Voici comment contribuer au site web la-rache.com
+Voici comment contribuer au site web [la-rache.com](http://www.la-rache.com)
 
 Installation de l'environnement de travail
 ------------------------------------------
@@ -30,7 +30,7 @@ Visualisation du code
 
 Partage de vos modifications
 ----------------------------
-* Si vous avez ajouté de nouveaux fichiers : ```git add <fichier>``` 
+* Si vous avez ajouté de nouveaux fichiers : ```git add <fichier>```
 * Commentez vos modifications : ```git commit -am "<votre commentaire sur vos modifications"```
 * Poussez les dans votre repo ```git push```
 * Depuis votre espace GitHub faites un merge request
