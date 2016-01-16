@@ -14,11 +14,11 @@ Installation de l'environnement de travail
 
 Modification des sources
 ------------------------
-* Editez le début de page et le pied de page dans ```src/parts```
-* Editez les corps des pages dans ```src/*.html```
-* Editez les images dans ```src/img```
-* Editez les css dans ```src/css```
-* Editez les js dans ```src/js```
+* Éditez le début de page et le pied de page dans ```src/parts```
+* Éditez les corps des pages dans ```src/*.html```
+* Éditez les images dans ```src/img```
+* Éditez les css dans ```src/css```
+* Éditez les js dans ```src/js```
 
 Génération du code HTML
 -----------------------
