@@ -33,6 +33,6 @@ Partage de vos modifications
 * Si vous avez ajouté de nouveaux fichiers : ```git add <fichier>```
 * Commentez vos modifications : ```git commit -am "<votre commentaire sur vos modifications"```
 * Poussez les dans votre repo ```git push```
-* Depuis votre espace GitHub faites un merge request
+* Depuis votre espace GitHub faites un pull request
 
 
