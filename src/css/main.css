@@ -96,14 +96,13 @@ body {
   text-align:center;
 }
 
-hr{
-	height: 0;
-	border: 0;
-	border-top: 1px solid #0550A5;
-	height: 1px;
-	color: #0550A5;
-	background-color: #0550A5;
-	}
+hr {
+    border: 0;
+    border-top: 1px solid #0550A5;
+    height: 1px;
+    color: #0550A5;
+    background-color: #0550A5;
+}
 
 body, td {
   font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
@@ -125,16 +124,15 @@ a:hover {
 }
 
 #page {
-	background-color:#FFF;
-	border: solid 1px #CCC;
-	border-top: none;
-	background-color: #FFF;
-	width: 900px;
-	margin: 0 auto 16px auto;
-	border-left: 1px solid #777;
-	border-right: 1px solid #777;
-	padding: 0;
-	text-align: left;
+    background-color: #FFF;
+    border: solid 1px #CCC;
+    border-top: none;
+    width: 900px;
+    margin: 0 auto 16px auto;
+    border-left: 1px solid #777;
+    border-right: 1px solid #777;
+    padding: 0;
+    text-align: left;
 }
 
 #top {
@@ -151,7 +149,7 @@ a:hover {
 	border-bottom: 1px solid #CCC;
 /*	background-image: url(../img/bg.png);*/
 	margin:0;
-	madding: 0;
+    padding: 0;
 }
 
 #side {
@@ -179,7 +177,7 @@ a:hover {
 	font-size: 75%;
 	text-align: center;
 	margin:0;
-	mapping: 0;
+    papping: 0;
 	color: #225;
 }
 
@@ -203,21 +201,17 @@ a:hover {
 }
 
 .zul {
-	padding: 0;
-  padding-top: 13px;
-	margin: 10px 0 0 0;
+    padding: 13px 0 0;
+    margin: 10px 0 0 0;
 	list-style: none;
 }
 .zli1,.zli2,.zli3,.zli4 {
-	background-color : #0550A5;
-	padding-left: 14px;*/
-	display : block;
-  text-align: left;
-	margin-top : 0.15em;
-	padding-left : 15px;
-	color : #ffffff;
-	background-color : #0550A5;
-
+    background-color: #0550A5;
+    display: block;
+    text-align: left;
+    margin-top: 0.15em;
+    padding-left: 15px;
+    color: #ffffff;
 }
 .zon {
 	/*background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/pge1.png);*/
@@ -228,7 +222,7 @@ a:hover {
 	background-color : #0550A5;
 }
 .zli1 {
-	margin-left: 0px;
+    margin-left: 0;
 }
 .zli2 {
 	margin-left: 16px;
