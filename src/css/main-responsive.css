@@ -1,0 +1,29 @@
+@media screen and (max-width: 900px) {
+    #page {
+        width: 100%;
+        border: none;
+        padding-bottom: 20px;
+    }
+
+    #top {
+        width: 100%;
+        height: auto;
+    }
+
+    #mid {
+        width: 100%;
+        border: none;
+    }
+
+    #main {
+        width: calc(100% - 14px);
+    }
+
+    #side {
+        width: calc(100% - 20px);
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
