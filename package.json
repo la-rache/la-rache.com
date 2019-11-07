@@ -11,7 +11,8 @@
     "grunt-text-replace": "^0.4.0"
   },
   "scripts": {
-    "test": "./node_modules/grunt-cli/bin/grunt  test"
+    "test": "./node_modules/grunt-cli/bin/grunt  test",
+    "build": "./node_modules/grunt-cli/bin/grunt"
   },
   "repository": {
     "type": "git",
