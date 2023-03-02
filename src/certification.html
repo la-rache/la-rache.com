@@ -1,0 +1,58 @@
+{{HEADER}}
+<div
+    style="
+        font-family: Copperplate, Papyrus, fantasy, 'Brush Script MT', Arial,
+            sans-serif;
+        text-align: center;
+        font-size: 1.5em;
+        border: 10px #ff9900 solid;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fef2e9;
+        font-weight: bold;
+    "
+>
+    <h3>🥇 Certificat de maitrise 🥇</h3>
+    <h2 style="background: #ff9900; color: white">La R.A.C.H.E.</h2>
+    <div>100% de réussite (ou presque) pour</div>
+    <h2>
+        🎓
+        <span contenteditable id="certif-name" autofocus>Juste LEBLANC</span> 🎓
+    </h2>
+    <blockquote contenteditable>
+        Pour la compréhension, dans les grandes lignes, <br />de la pratique
+        théorique de la méthodologie à La Rache <br />et de tout ce qui en
+        incombe.
+    </blockquote>
+    Le
+    <input type="date" />
+    <script>
+        document.querySelector("input[type='date']").valueAsDate = new Date();
+        document.getElementById("certif-name").addEventListener("keyup", () => {
+            console.log(document.getElementById("certif-name").textContent);
+            document.location.hash =
+                document.getElementById("certif-name").textContent;
+        });
+        if (document.location.hash) {
+            document.getElementById("certif-name").textContent = decodeURI(
+                document.location.hash.slice(1, document.location.hash.length)
+            );
+        }
+        document.getElementById("certif-name").focus();
+    </script>
+</div>
+<style>
+    input[type="date"] {
+        border: none;
+        font-size: 1em;
+        font-family: inherit;
+        background-color: transparent;
+        font-weight: bold;
+    }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+</style>
+{{FOOTER}}
