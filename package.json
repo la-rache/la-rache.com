@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "description": "Site web la-rache.com",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-html": "^5.0.1",
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-html": "^16.0.0",
     "grunt-text-replace": "^0.4.0"
   },
   "scripts": {
