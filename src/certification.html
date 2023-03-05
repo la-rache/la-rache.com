@@ -108,17 +108,13 @@
     <div>100% de réussite (ou presque) pour</div>
     <h2 style="font-family: 'Brush Script MT'; font-size: 50px; margin: 20px 0">
         🎓
-        <textarea
-            type="tex
-        "
+        <input
+            type="text"
             id="certif-name"
             autofocus
             spellcheck="false"
-            value=""
-            rows="1"
-        >
-Juste LEBLANC</textarea
-        >
+            value="Juste LEBLANC"
+        />
         🎓
     </h2>
     <!-- <blockquote contenteditable spellcheck="false">
@@ -183,7 +179,7 @@ Juste LEBLANC</textarea
 
     <script>
         document.querySelector("input[type='date']").valueAsDate = new Date();
-        document.getElementById("certif-name").addEventListener("keyup", () => {
+        document.getElementById("certif-name").addEventListener("input", () => {
             console.log(document.getElementById("certif-name").value);
             document.location.hash =
                 document.getElementById("certif-name").value;
@@ -214,8 +210,11 @@ Juste LEBLANC</textarea
         font-size: 1em;
         font-family: inherit;
         background-color: transparent;
+    }
+    #certif-name {
         padding: 0 10px;
-        /* font-weight: bold; */
+        width: calc(100% - 4em);
+        text-align: center;
     }
     input[type="date"]::-webkit-inner-spin-button,
     input[type="date"]::-webkit-calendar-picker-indicator {
