@@ -108,14 +108,25 @@
     <div>100% de réussite (ou presque) pour</div>
     <h2 style="font-family: 'Brush Script MT'; font-size: 50px; margin: 20px 0">
         🎓
-        <span contenteditable id="certif-name" autofocus>Juste LEBLANC</span> 🎓
+        <textarea
+            type="tex
+        "
+            id="certif-name"
+            autofocus
+            spellcheck="false"
+            value=""
+            rows="1"
+        >
+Juste LEBLANC</textarea
+        >
+        🎓
     </h2>
-    <!-- <blockquote contenteditable>
+    <!-- <blockquote contenteditable spellcheck="false">
         Pour la compréhension, dans les grandes lignes, <br />de la pratique
         théorique de la méthodologie à La Rache <br />et de tout ce qui en
         incombe.
     </blockquote> -->
-    <blockquote contenteditable>
+    <blockquote contenteditable spellcheck="false">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odio
         debitis fugit tempore quidem odit dolor impedit sit dolorem neque!
         Similique, reiciendis accusamus! Facere architecto, deleniti voluptatem
@@ -173,12 +184,12 @@
     <script>
         document.querySelector("input[type='date']").valueAsDate = new Date();
         document.getElementById("certif-name").addEventListener("keyup", () => {
-            console.log(document.getElementById("certif-name").textContent);
+            console.log(document.getElementById("certif-name").value);
             document.location.hash =
-                document.getElementById("certif-name").textContent;
+                document.getElementById("certif-name").value;
         });
         if (document.location.hash) {
-            document.getElementById("certif-name").textContent = decodeURI(
+            document.getElementById("certif-name").value = decodeURI(
                 document.location.hash.slice(1, document.location.hash.length)
             );
         }
@@ -197,11 +208,13 @@
     </button>
 </p>
 <style>
-    input[type="date"] {
+    input[type="date"],
+    #certif-name {
         border: none;
         font-size: 1em;
         font-family: inherit;
         background-color: transparent;
+        padding: 0 10px;
         /* font-weight: bold; */
     }
     input[type="date"]::-webkit-inner-spin-button,
