@@ -113,14 +113,7 @@
     <!-- <h3>🥇 Certificat de réussite 🥇</h3> -->
     <!-- <h2 style="background: #ff9900; color: white">La R.A.C.H.E.</h2> -->
     <div>100% de réussite (ou presque) pour</div>
-    <h2
-        style="
-            font-family: cursive, 'Brush Script MT';
-            font-size: 50px;
-            margin: 20px 0;
-        "
-    >
-        🎓
+    <div style="margin: 20px 0">
         <input
             type="text"
             id="certif-name"
@@ -146,8 +139,7 @@
             }
             document.getElementById("certif-name").focus();
         </script>
-        🎓
-    </h2>
+    </div>
     <!-- <blockquote contenteditable spellcheck="false">
         Pour la compréhension, dans les grandes lignes, <br />de la pratique
         théorique de la méthodologie à La Rache <br />et de tout ce qui en
@@ -233,13 +225,14 @@
     input[type="date"],
     #certif-name {
         border: none;
-        font-size: 1em;
         font-family: inherit;
         background-color: transparent;
     }
     #certif-name {
         padding: 0 10px;
-        width: calc(100% - 4em);
+        font-family: cursive, "Brush Script MT";
+        font-size: 2em;
+        width: 100%;
         text-align: center;
     }
     input[type="date"]::-webkit-inner-spin-button,
