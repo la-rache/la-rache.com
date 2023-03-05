@@ -120,6 +120,24 @@
             spellcheck="false"
             value="Juste LEBLANC"
         />
+        <script>
+            document
+                .getElementById("certif-name")
+                .addEventListener("input", () => {
+                    console.log(document.getElementById("certif-name").value);
+                    document.location.hash =
+                        document.getElementById("certif-name").value;
+                });
+            if (document.location.hash) {
+                document.getElementById("certif-name").value = decodeURI(
+                    document.location.hash.slice(
+                        1,
+                        document.location.hash.length
+                    )
+                );
+            }
+            document.getElementById("certif-name").focus();
+        </script>
         🎓
     </h2>
     <!-- <blockquote contenteditable spellcheck="false">
@@ -127,15 +145,19 @@
         théorique de la méthodologie à La Rache <br />et de tout ce qui en
         incombe.
     </blockquote> -->
-    <blockquote contenteditable spellcheck="false">
+    <blockquote>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odio
         debitis fugit tempore quidem odit dolor impedit sit dolorem neque!
         Similique, reiciendis accusamus! Facere architecto, deleniti voluptatem
         numquam corporis quod.
     </blockquote>
     <p>
-        Au centre de déformation, Le
+        À la cafèt’, le
         <input type="date" />
+        <script>
+            document.querySelector("input[type='date']").valueAsDate =
+                new Date();
+        </script>
     </p>
 
     <div style="display: flex; justify-content: space-around">
@@ -178,7 +200,11 @@
         </div>
         <div>
             <div>Chef Truc Officier</div>
-            <strong>Le stagiaire</strong>
+            <!-- prettier-ignore -->
+            <strong>
+                L<span id="ea"></span><script> document.getElementById('ea').textContent = ["e","a"][Math.round(Math.random())];</script>
+                stagiaire
+            </strong>
         </div>
     </div>
     <div style="text-align: right">
@@ -186,21 +212,6 @@
             >www.la-rache.com</a
         >
     </div>
-
-    <script>
-        document.querySelector("input[type='date']").valueAsDate = new Date();
-        document.getElementById("certif-name").addEventListener("input", () => {
-            console.log(document.getElementById("certif-name").value);
-            document.location.hash =
-                document.getElementById("certif-name").value;
-        });
-        if (document.location.hash) {
-            document.getElementById("certif-name").value = decodeURI(
-                document.location.hash.slice(1, document.location.hash.length)
-            );
-        }
-        document.getElementById("certif-name").focus();
-    </script>
 </div>
 
 <p style="text-align: center">
