@@ -1,6 +1,7 @@
 {{HEADER}}
 
 <div
+    id="certificat"
     style="
         --bg1: #ff9900;
         --bg2: #bf7373;
@@ -118,7 +119,6 @@
         <input
             type="text"
             id="certif-name"
-            autofocus
             spellcheck="false"
             placeholder="Prénom NOM"
         />
@@ -126,11 +126,15 @@
             document
                 .getElementById("certif-name")
                 .addEventListener("input", () => {
-                    console.log(document.getElementById("certif-name").value);
-                    document.location.hash =
-                        document.getElementById("certif-name").value;
+                    const name = document.getElementById("certif-name").value;
+                    history.replaceState(
+                        "",
+                        "",
+                        window.location.pathname + (name ? `#${name}` : "")
+                    );
                 });
-            if (document.location.hash) {
+
+            if (document.location.hash && document.location.hash !== "#") {
                 document.getElementById("certif-name").value = decodeURI(
                     document.location.hash.slice(
                         1,
@@ -138,7 +142,12 @@
                     )
                 );
             }
-            document.getElementById("certif-name").focus();
+            setTimeout(() => {
+                (document.documentElement || document.body).scrollTo({
+                    top: document.getElementById("certificat").offsetTop - 50,
+                    behavior: "smooth",
+                });
+            }, 300);
         </script>
     </div>
     <blockquote>
@@ -156,8 +165,8 @@
 
     <div style="display: flex; justify-content: space-around">
         <div>
-            <div>Chef Executeur Officier</div>
-            <strong>JC VD</strong>
+            <div>Le Président</div>
+            <strong>METODA Gilles</strong>
         </div>
         <div style="position: relative">
             <div
@@ -193,16 +202,24 @@
             >
         </div>
         <div>
-            <div>Chef Truc Officier</div>
+            <div>Chargé<span id="ee"></span> de Formation</div>
             <!-- prettier-ignore -->
             <strong>
-                L<span id="ea"></span><script> document.getElementById('ea').textContent = ["e","a"][Math.round(Math.random())];</script>
-                stagiaire
-            </strong>
+            L<span id="ea"></span>
+            stagiaire
+        </strong>
+            <script>
+                // masculin || féminin
+                var xy = [Math.round(Math.random())];
+                document.getElementById("ea").textContent = ["e", "a"][xy];
+                document.getElementById("ee").textContent = ["", "e"][xy];
+            </script>
         </div>
     </div>
     <div style="text-align: right">
-        <a href="https://www.la-rache.com" style="color: black"
+        <a
+            href="https://www.la-rache.com"
+            style="color: black; text-decoration: underline"
             >www.la-rache.com</a
         >
     </div>
@@ -210,8 +227,16 @@
 
 <p style="text-align: center">
     <button
+        type="button"
+        onclick="document.getElementById('certif-name').focus();document.getElementById('certif-name').select()"
+    >
+        Modifier
+    </button>
+    &nbsp;
+
+    <button
         onclick="navigator.share({
-    title: `Certificat de réussite de l'International Institute of La RACHE de ${document.getElementById('certif-name').textContent}`,
+    title: `Certificat de l'International Institute of La RACHE de ${document.getElementById('certif-name').value}`,
     url : document.location.href,
   });"
     >
