@@ -1,14 +1,111 @@
 {{HEADER}}
 
-<div
-    id="certificat"
-    style="
+<div id="certificat">
+    <div class="certificat-header">
+        <div class="palme"></div>
+        <!-- https://svgsilh.com/image/2109235.html -->
+        <h1>
+            <div style="font-weight: lighter">Certificat de réussite</div>
+            <div style="font-size: 20px">
+                International Institute of La RACHE
+            </div>
+        </h1>
+        <div class="palme"></div>
+    </div>
+
+    <div>100% de réussite (ou presque) pour</div>
+    <div style="margin: 20px 0">
+        <input
+            type="text"
+            id="certif-name"
+            spellcheck="false"
+            placeholder="Prénom NOM"
+        />
+        <script>
+            document
+                .getElementById("certif-name")
+                .addEventListener("input", () => {
+                    const name = document.getElementById("certif-name").value;
+                    history.replaceState("","",window.location.pathname + (name ? `#${name}` : "")); //prettier-ignore
+                });
+
+            if (document.location.hash && document.location.hash !== "#") {
+                document.getElementById("certif-name").value = decodeURI(
+                    document.location.hash.slice(
+                        1,
+                        document.location.hash.length
+                    )
+                );
+            }
+            setTimeout(() => {
+                (document.documentElement || document.body).scrollTo({
+                    top: document.getElementById("certificat").offsetTop - 50,
+                    behavior: "smooth",
+                });
+            }, 300);
+        </script>
+    </div>
+    <blockquote>
+        Qui saura travailler dans des conditions à peu près satisfaisantes pour
+        un résultat approximativement optimale.
+    </blockquote>
+    <p>
+        Formé(e) à la cafèt’, le
+        <input
+            type="date"
+            onchange="this.nextElementSibling.textContent = this.valueAsDate.toLocaleDateString()"
+        />
+        <span></span>
+        <!-- <span> pour le screenshot -->
+        <script>
+            const dateInput = document.querySelector("input[type='date']");
+            dateInput.valueAsDate = new Date();
+            dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
+        </script>
+    </p>
+
+    <div style="display: flex; justify-content: space-around">
+        <div>
+            <div>Le Président</div>
+            <strong>METODA Gilles</strong>
+        </div>
+        <div style="position: relative">
+            <div class="badge"></div>
+            <span class="badge-label">La R.A.C.H.E.</span>
+        </div>
+        <div>
+            <div>Chargé<span id="ee"></span> de Formation</div>
+            <!-- prettier-ignore -->
+            <strong>
+            L<span id="ea"></span>
+            stagiaire
+        </strong>
+            <script>
+                // masculin || féminin
+                var xy = [Math.round(Math.random())];
+                document.getElementById("ea").textContent = ["e", "a"][xy];
+                document.getElementById("ee").textContent = ["", "e"][xy];
+            </script>
+        </div>
+    </div>
+    <div style="text-align: right">
+        <a
+            href="https://www.la-rache.com"
+            style="color: black; text-decoration: underline"
+        >
+            www.la-rache.com
+        </a>
+    </div>
+</div>
+
+<style>
+    #certificat {
         --bg1: #ff9900;
         --bg2: #bf7373;
         --bg3: #fef2e9;
 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
         text-align: center;
         font-size: 1.2em;
@@ -17,19 +114,7 @@
         margin: 0 auto;
         background: var(--bg3);
         padding: 1em;
-        /* background: linear-gradient(var(--bg2), white) padding-box,
-            repeating-linear-gradient(
-                    -45deg,
-                    var(--bg1) 0,
-                    var(--bg1) 12.5%,
-                    transparent 0,
-                    transparent 25%,
-                    var(--bg2) 0,
-                    var(--bg2) 37.5%,
-                    transparent 0,
-                    transparent 50%
-                )
-                0 / 5em 5em; */
+
         border: 1rem solid var(--bg1);
         border-image: repeating-linear-gradient(
                 45deg,
@@ -60,190 +145,89 @@
         );
         border: 5px solid #efe2a0;
         box-shadow: 0px 2px 15px 0px #b1822a;
-    "
->
-    <div
-        style="
-            display: flex;
-            justify-content: center;
-            font-family: Copperplate, Papyrus, fantasy, Times New Roman;
-            font-weight: bold;
-        "
-    >
-        <div
-            style="
-                background: linear-gradient(
-                    to right,
-                    #bf953f,
-                    #fcf6ba,
-                    #b38728,
-                    #fbf5b7,
-                    #aa771c
-                );
-                -webkit-mask: url(img/palme.svg) no-repeat center / contain;
-                -moz-mask: url(img/palme.svg) no-repeat center / contain;
-                mask: url(img/palme.svg) no-repeat center / contain;
-                width: 80px;
-                transform: scaleX(-1);
-            "
-        ></div>
-        <!-- https://svgsilh.com/image/2109235.html -->
-        <h1>
-            <div style="font-weight: lighter">Certificat de réussite</div>
-            <div style="font-size: 20px">
-                International Institute of La RACHE
-            </div>
-        </h1>
-        <div
-            style="
-                background: linear-gradient(
-                    to right,
-                    #bf953f,
-                    #fcf6ba,
-                    #b38728,
-                    #fbf5b7,
-                    #aa771c
-                );
-                -webkit-mask: url(img/palme.svg) no-repeat center / contain;
-                -moz-mask: url(img/palme.svg) no-repeat center / contain;
-                mask: url(img/palme.svg) no-repeat center/ contain;
-                width: 80px;
-            "
-        ></div>
-    </div>
+    }
 
-    <!-- <h3>🥇 Certificat de réussite 🥇</h3> -->
-    <!-- <h2 style="background: #ff9900; color: white">La R.A.C.H.E.</h2> -->
-    <div>100% de réussite (ou presque) pour</div>
-    <div style="margin: 20px 0">
-        <input
-            type="text"
-            id="certif-name"
-            spellcheck="false"
-            placeholder="Prénom NOM"
-        />
-        <script>
-            document
-                .getElementById("certif-name")
-                .addEventListener("input", () => {
-                    const name = document.getElementById("certif-name").value;
-                    history.replaceState(
-                        "",
-                        "",
-                        window.location.pathname + (name ? `#${name}` : "")
-                    );
-                });
+    .certificat-header {
+        display: flex;
+        justify-content: center;
+        font-family: Copperplate, Papyrus, fantasy, Times New Roman;
+        font-weight: bold;
+    }
 
-            if (document.location.hash && document.location.hash !== "#") {
-                document.getElementById("certif-name").value = decodeURI(
-                    document.location.hash.slice(
-                        1,
-                        document.location.hash.length
-                    )
-                );
-            }
-            setTimeout(() => {
-                (document.documentElement || document.body).scrollTo({
-                    top: document.getElementById("certificat").offsetTop - 50,
-                    behavior: "smooth",
-                });
-            }, 300);
-        </script>
-    </div>
-    <blockquote>
-        Qui saura travailler dans des conditions à peu près satisfaisantes pour
-        un résultat approximativement optimale.
-    </blockquote>
-    <p>
-        Formé(e) à la cafèt’, le
-        <input type="date" />
-        <script>
-            document.querySelector("input[type='date']").valueAsDate =
-                new Date();
-        </script>
-    </p>
+    .palme {
+        background: linear-gradient(
+            to right,
+            #bf953f,
+            #fcf6ba,
+            #b38728,
+            #fbf5b7,
+            #aa771c
+        );
+        -webkit-mask: url(img/palme.svg) no-repeat center / contain;
+        -moz-mask: url(img/palme.svg) no-repeat center / contain;
+        mask: url(img/palme.svg) no-repeat center/ contain;
+        width: 80px;
+    }
 
-    <div style="display: flex; justify-content: space-around">
-        <div>
-            <div>Le Président</div>
-            <strong>METODA Gilles</strong>
-        </div>
-        <div style="position: relative">
-            <div
-                style="
-                    -webkit-mask: url(img/badge.svg) no-repeat center / contain;
-                    -moz-mask: url(img/badge.svg) no-repeat center / contain;
-                    mask: url(img/badge.svg) no-repeat center / contain;
-                    width: 164px;
-                    height: 164px;
-                    background: linear-gradient(
-                        145deg,
-                        #bf953f,
-                        #fcf6ba,
-                        #b38728,
-                        #fbf5b7,
-                        #aa771c
-                    );
-                "
-            ></div>
-            <span
-                style="
-                    top: 68px;
-                    position: absolute;
-                    width: 100%;
-                    left: 0;
-                    font-family: Copperplate, Papyrus, fantasy;
-                    color: white;
-                    font-size: 15px;
-                    font-weight: bold;
-                    text-shadow: -1px 1px 6px black;
-                "
-                >La R.A.C.H.E.</span
-            >
-        </div>
-        <div>
-            <div>Chargé<span id="ee"></span> de Formation</div>
-            <!-- prettier-ignore -->
-            <strong>
-            L<span id="ea"></span>
-            stagiaire
-        </strong>
-            <script>
-                // masculin || féminin
-                var xy = [Math.round(Math.random())];
-                document.getElementById("ea").textContent = ["e", "a"][xy];
-                document.getElementById("ee").textContent = ["", "e"][xy];
-            </script>
-        </div>
-    </div>
-    <div style="text-align: right">
-        <a
-            href="https://www.la-rache.com"
-            style="color: black; text-decoration: underline"
-            >www.la-rache.com</a
-        >
-    </div>
-</div>
+    .palme:first-child {
+        transform: scaleX(-1);
+    }
 
-<p style="text-align: center">
-    <button
-        type="button"
-        onclick="document.getElementById('certif-name').focus();document.getElementById('certif-name').select()"
-    >
-        Modifier
-    </button>
-    &nbsp;
+    .badge {
+        -webkit-mask: url(img/badge.svg) no-repeat center / contain;
+        -moz-mask: url(img/badge.svg) no-repeat center / contain;
+        mask: url(img/badge.svg) no-repeat center / contain;
+        width: 164px;
+        height: 164px;
+        background: linear-gradient(
+            145deg,
+            #bf953f,
+            #fcf6ba,
+            #b38728,
+            #fbf5b7,
+            #aa771c
+        );
+    }
 
-    <button
-        onclick="navigator.share({
-    title: `Certificat de l'International Institute of La RACHE de ${document.getElementById('certif-name').value}`,
-    url : document.location.href,
-  });"
-    >
-        Partager au reste du monde
-    </button>
-</p>
-<style>
+    .badge-label {
+        top: 68px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        font-family: Copperplate, Papyrus, fantasy;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: -1px 1px 6px black;
+    }
+
+    /* dom2image.js n'aime pas les mask */
+    .screenshot .palme {
+        background: url(img/palme.png);
+        background-size: contain;
+        -webkit-mask: none;
+        -moz-mask: none;
+        mask: none;
+    }
+    .screenshot .badge {
+        background: url(img/badge.png);
+        background-size: contain;
+        -webkit-mask: none;
+        -moz-mask: none;
+        mask: none;
+    }
+
+    /* pour cacher l'input et surtout sont icone 'datepicker' */
+    .screenshot input[type="date"] {
+        display: none;
+    }
+    input[type="date"] + span {
+        display: none;
+    }
+    .screenshot input[type="date"] + span {
+        display: inline-block;
+    }
+
     input[type="date"],
     #certif-name {
         border: none;
@@ -262,5 +246,95 @@
         display: none;
         -webkit-appearance: none;
     }
+
+    #certificat.screenshot {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script>
+    async function downloadScreenshot(event) {
+        const file = await screenshot();
+        const fileURL = URL.createObjectURL(file);
+        const fileType = file.type.split("/").pop();
+        const link = document.createElement("a");
+        link.download = file.name;
+        link.href = fileURL;
+        link.click();
+    }
+
+    async function screenshot() {
+        return new Promise(async (resolve, reject) => {
+            document.getElementById("certificat").classList.add("screenshot");
+            const el = document.getElementById("certificat");
+            domtoimage
+                .toBlob(el)
+                .then(async function (blob) {
+                    const img = document.createElement("img");
+                    img.src = URL.createObjectURL(blob);
+
+                    // convert to .webp or .jpeg image
+                    img.onload = async function () {
+                        const canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
+
+                        const webP = new Image();
+                        webP.src =
+                            "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+                        webP.onload = webP.onerror = () => {
+                            const supportWebp = webP.height === 2;
+                            const imageType = supportWebp ? "image/webp" : "image/jpeg"; //prettier-ignore
+                            const imageExtension = supportWebp ? "webp" : "jpeg"; //prettier-ignore
+
+                            canvas.toBlob((blob) => {
+                                const file = new File(
+                                    [blob],
+                                    `Certif_a_LARACHE_${document.getElementById("certif-name").value}.${imageExtension}`, //prettier-ignore
+                                    { type: imageType }
+                                );
+                                resolve(file);
+                            }, imageType);
+                        };
+                    };
+                })
+                .catch(function (error) {
+                    console.error("domtoimage", error);
+                    reject(error);
+                })
+                .finally(function () {
+                    setTimeout(() => {
+                        document
+                            .getElementById("certificat")
+                            .classList.remove("screenshot");
+                    }, 0);
+                });
+        });
+    }
+</script>
+<p style="text-align: center">
+    <button
+        type="button"
+        onclick="document.getElementById('certif-name').focus();document.getElementById('certif-name').select()"
+    >
+        Modifier
+    </button>
+    &nbsp;
+
+    <button
+        onclick="navigator.share({
+    title: `Certificat de l'International Institute of La RACHE de ${document.getElementById('certif-name').value}`,
+    url : document.location.href,
+  });"
+    >
+        Partager au reste du monde
+    </button>
+    &nbsp;
+    <button onclick="downloadScreenshot()">Enregistrer</button>
+</p>
 {{FOOTER}}
