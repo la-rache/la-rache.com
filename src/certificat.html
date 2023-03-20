@@ -1,140 +1,117 @@
 {{HEADER}}
 
-<div id="certificat">
-    <div class="certificat-header">
-        <div class="palme"></div>
-        <!-- https://svgsilh.com/image/2109235.html -->
-        <h1>
-            <div style="font-weight: lighter">Certificat de réussite</div>
-            <div style="font-size: 20px">
-                International Institute of La RACHE
+<div id="certificat-wrap">
+    <div id="certificat">
+        <div class="certificat-header">
+            <div class="palme"></div>
+            <!-- https://svgsilh.com/image/2109235.html -->
+            <h1>
+                <div style="font-weight: lighter">Certificat de réussite</div>
+                <div style="font-size: 20px">
+                    International Institute of La RACHE
+                </div>
+            </h1>
+            <div class="palme"></div>
+        </div>
+
+        <div>100% de réussite (ou presque) pour</div>
+        <div style="margin: 20px 0">
+            <input
+                type="text"
+                id="certif-name"
+                spellcheck="false"
+                placeholder="Prénom NOM"
+            />
+            <script>
+                document
+                    .getElementById("certif-name")
+                    .addEventListener("input", () => {
+                        const name =
+                            document.getElementById("certif-name").value;
+                        history.replaceState("","",window.location.pathname + (name ? `#${name}` : "")); //prettier-ignore
+                    });
+
+                if (document.location.hash && document.location.hash !== "#") {
+                    document.getElementById("certif-name").value = decodeURI(
+                        document.location.hash.slice(
+                            1,
+                            document.location.hash.length
+                        )
+                    );
+                }
+                setTimeout(() => {
+                    (document.documentElement || document.body).scrollTo({
+                        top:
+                            document.getElementById("certificat").offsetTop -
+                            50,
+                        behavior: "smooth",
+                    });
+                }, 300);
+            </script>
+        </div>
+        <blockquote>
+            Qui saura travailler dans des conditions à peu près satisfaisantes
+            pour un résultat approximativement optimale.
+        </blockquote>
+        <p>
+            Formé(e) à la cafèt’, le
+            <input
+                type="date"
+                onchange="this.nextElementSibling.textContent = this.valueAsDate.toLocaleDateString()"
+            /><span></span>
+            <!-- <span> pour le screenshot -->
+            <script>
+                const dateInput = document.querySelector("input[type='date']");
+                dateInput.valueAsDate = new Date();
+                dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
+            </script>
+        </p>
+
+        <div style="display: flex; justify-content: space-around">
+            <div>
+                <div>Le Président</div>
+                <strong>METODA Gilles</strong>
             </div>
-        </h1>
-        <div class="palme"></div>
-    </div>
-
-    <div>100% de réussite (ou presque) pour</div>
-    <div style="margin: 20px 0">
-        <input
-            type="text"
-            id="certif-name"
-            spellcheck="false"
-            placeholder="Prénom NOM"
-        />
-        <script>
-            document
-                .getElementById("certif-name")
-                .addEventListener("input", () => {
-                    const name = document.getElementById("certif-name").value;
-                    history.replaceState("","",window.location.pathname + (name ? `#${name}` : "")); //prettier-ignore
-                });
-
-            if (document.location.hash && document.location.hash !== "#") {
-                document.getElementById("certif-name").value = decodeURI(
-                    document.location.hash.slice(
-                        1,
-                        document.location.hash.length
-                    )
-                );
-            }
-            setTimeout(() => {
-                (document.documentElement || document.body).scrollTo({
-                    top: document.getElementById("certificat").offsetTop - 50,
-                    behavior: "smooth",
-                });
-            }, 300);
-        </script>
-    </div>
-    <blockquote>
-        Qui saura travailler dans des conditions à peu près satisfaisantes pour
-        un résultat approximativement optimale.
-    </blockquote>
-    <p>
-        Formé(e) à la cafèt’, le
-        <input
-            type="date"
-            onchange="this.nextElementSibling.textContent = this.valueAsDate.toLocaleDateString()"
-        />
-        <span></span>
-        <!-- <span> pour le screenshot -->
-        <script>
-            const dateInput = document.querySelector("input[type='date']");
-            dateInput.valueAsDate = new Date();
-            dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
-        </script>
-    </p>
-
-    <div style="display: flex; justify-content: space-around">
-        <div>
-            <div>Le Président</div>
-            <strong>METODA Gilles</strong>
-        </div>
-        <div style="position: relative">
-            <div class="badge"></div>
-            <span class="badge-label">La R.A.C.H.E.</span>
-        </div>
-        <div>
-            <div>Chargé<span id="ee"></span> de Formation</div>
-            <!-- prettier-ignore -->
-            <strong>
+            <div style="position: relative">
+                <div class="badge"></div>
+                <span class="badge-label">La R.A.C.H.E.</span>
+            </div>
+            <div>
+                <div>Chargé<span id="ee"></span> de Formation</div>
+                <!-- prettier-ignore -->
+                <strong>
             L<span id="ea"></span>
             stagiaire
         </strong>
-            <script>
-                // masculin || féminin
-                var xy = [Math.round(Math.random())];
-                document.getElementById("ea").textContent = ["e", "a"][xy];
-                document.getElementById("ee").textContent = ["", "e"][xy];
-            </script>
+                <script>
+                    // masculin || féminin
+                    var xy = [Math.round(Math.random())];
+                    document.getElementById("ea").textContent = ["e", "a"][xy];
+                    document.getElementById("ee").textContent = ["", "e"][xy];
+                </script>
+            </div>
         </div>
-    </div>
-    <div style="text-align: right">
-        <a
-            href="https://www.la-rache.com"
-            style="color: black; text-decoration: underline"
-        >
-            www.la-rache.com
-        </a>
+        <div style="text-align: right">
+            <a
+                href="https://www.la-rache.com"
+                style="color: black; text-decoration: underline"
+            >
+                www.la-rache.com
+            </a>
+        </div>
     </div>
 </div>
 
 <style>
     #certificat {
-        --bg1: #ff9900;
-        --bg2: #bf7373;
-        --bg3: #fef2e9;
-
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-
-        text-align: center;
         font-size: 1.2em;
-        border: 10px #ff9900 solid;
+        font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
+            "URW Bookman L", "Georgia Pro", Georgia, serif;
+        text-align: center;
         max-width: 800px;
         margin: 0 auto;
-        background: var(--bg3);
         padding: 1em;
 
-        border: 1rem solid var(--bg1);
-        border-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 5px,
-                var(--bg1) 6px,
-                var(--bg1) 15px,
-                transparent 16px,
-                transparent 20px
-            )
-            20/1rem;
-
-        background: linear-gradient(
-            145deg,
-            #bf953f,
-            #fcf6ba,
-            #fcf6ba,
-            #fbf5b7,
-            #aa771c
-        );
         background: linear-gradient(
             145deg,
             #dfc47f,
@@ -150,7 +127,7 @@
     .certificat-header {
         display: flex;
         justify-content: center;
-        font-family: Copperplate, Papyrus, fantasy, Times New Roman;
+
         font-weight: bold;
     }
 
@@ -190,11 +167,10 @@
     }
 
     .badge-label {
-        top: 68px;
+        top: 70px;
         position: absolute;
         width: 100%;
         left: 0;
-        font-family: Copperplate, Papyrus, fantasy;
         color: white;
         font-size: 15px;
         font-weight: bold;
@@ -203,14 +179,14 @@
 
     /* dom2image.js n'aime pas les mask */
     .screenshot .palme {
-        background: url(img/palme.png);
+        background: url(img/palme.png) no-repeat center;
         background-size: contain;
         -webkit-mask: none;
         -moz-mask: none;
         mask: none;
     }
     .screenshot .badge {
-        background: url(img/badge.png);
+        background: url(img/badge.png) no-repeat center;
         background-size: contain;
         -webkit-mask: none;
         -moz-mask: none;
@@ -218,10 +194,20 @@
     }
 
     /* pour cacher l'input et surtout sont icone 'datepicker' */
-    .screenshot input[type="date"] {
-        display: none;
+
+    input[type="date"],
+    input[type="date"] + span {
+        display: inline-block;
+        height: 1.2em;
+        margin: 0;
+        padding: 0;
+        width: 130px;
+        text-align: left;
     }
     input[type="date"] + span {
+        display: none;
+    }
+    .screenshot input[type="date"] {
         display: none;
     }
     .screenshot input[type="date"] + span {
@@ -229,7 +215,7 @@
     }
 
     input[type="date"],
-    #certif-name {
+    input[type="text"] {
         border: none;
         font: inherit;
         background-color: transparent;
@@ -237,6 +223,9 @@
     #certif-name {
         padding: 0 10px;
         font-family: cursive, "Brush Script MT";
+        font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+            cursive;
+
         font-size: 2em;
         width: 100%;
         text-align: center;
@@ -246,83 +235,36 @@
         display: none;
         -webkit-appearance: none;
     }
-
-    #certificat.screenshot {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 <script>
-    async function downloadScreenshot(event) {
-        const file = await screenshot();
-        const fileURL = URL.createObjectURL(file);
-        const fileType = file.type.split("/").pop();
-        const link = document.createElement("a");
-        link.download = file.name;
-        link.href = fileURL;
-        link.click();
-    }
-
-    async function screenshot() {
-        return new Promise(async (resolve, reject) => {
-            document.getElementById("certificat").classList.add("screenshot");
-            const el = document.getElementById("certificat");
-            domtoimage
-                .toBlob(el)
-                .then(async function (blob) {
-                    const img = document.createElement("img");
-                    img.src = URL.createObjectURL(blob);
-
-                    // convert to .webp or .jpeg image
-                    img.onload = async function () {
-                        const canvas = document.createElement("canvas");
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        const ctx = canvas.getContext("2d");
-                        ctx.drawImage(img, 0, 0);
-
-                        const webP = new Image();
-                        webP.src =
-                            "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-                        webP.onload = webP.onerror = () => {
-                            const supportWebp = webP.height === 2;
-                            const imageType = supportWebp ? "image/webp" : "image/jpeg"; //prettier-ignore
-                            const imageExtension = supportWebp ? "webp" : "jpeg"; //prettier-ignore
-
-                            canvas.toBlob((blob) => {
-                                const file = new File(
-                                    [blob],
-                                    `Certif_a_LARACHE_${document.getElementById("certif-name").value}.${imageExtension}`, //prettier-ignore
-                                    { type: imageType }
-                                );
-                                resolve(file);
-                            }, imageType);
-                        };
-                    };
-                })
-                .catch(function (error) {
-                    console.error("domtoimage", error);
-                    reject(error);
-                })
-                .finally(function () {
-                    setTimeout(() => {
-                        document
-                            .getElementById("certificat")
-                            .classList.remove("screenshot");
-                    }, 0);
-                });
-        });
+    function download() {
+        const certificat = document.getElementById("certificat-wrap");
+        certificat.classList.add("screenshot");
+        domtoimage
+            .toJpeg(certificat, { quality: 0.95 })
+            .then(function (dataUrl) {
+                const link = document.createElement("a");
+                link.download = `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`; //prettier-ignore
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch(function (error) {
+                console.error("domtoimage", error);
+                reject(error);
+            })
+            .finally(function () {
+                certificat.classList.remove("screenshot");
+            });
     }
 </script>
-<p style="text-align: center">
+<p class="certificat-actions">
     <button
         type="button"
         onclick="document.getElementById('certif-name').focus();document.getElementById('certif-name').select()"
     >
-        Modifier
+        <span>🖊️</span> Modifier
     </button>
     &nbsp;
 
@@ -332,9 +274,26 @@
     url : document.location.href,
   });"
     >
-        Partager au reste du monde
+        <span>📤</span> Partager au reste du monde
     </button>
     &nbsp;
-    <button onclick="downloadScreenshot()">Enregistrer</button>
+    <button onclick="download()"><span>📸</span> Enregistrer</button>
 </p>
+
+<style>
+    .certificat-actions {
+        text-align: center;
+    }
+    .certificat-actions button {
+        display: inline-flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 0.5em;
+    }
+    .certificat-actions button span {
+        font-size: 1.5em;
+        line-height: 1.5;
+    }
+</style>
 {{FOOTER}}
