@@ -15,7 +15,7 @@
         </div>
 
         <div>100% de réussite (ou presque) pour</div>
-        <div style="margin: 20px 0">
+        <p>
             <input
                 type="text"
                 id="certif-name"
@@ -41,16 +41,21 @@
                     });
                 }, 300);
             </script>
-        </div>
+        </p>
         <blockquote>
             Qui saura travailler dans des conditions à peu près satisfaisantes
             pour un résultat approximativement optimale.
         </blockquote>
         <p>
-            Formé(e) à la cafèt’, le&nbsp;<input type="date" />
+            Formé(e) à la cafèt’, le&nbsp;<input
+                type="date"
+                onchange="this.nextElementSibling.textContent = this.valueAsDate.toLocaleDateString()"
+            /><span></span>
+            <!-- balise <span> à coté du datepicker : pour cacher l'icone du 'datepicker' pendant le screenshot    -->
             <script>
-                document.querySelector("input[type='date']").valueAsDate =
-                    new Date();
+                const dateInput = document.querySelector("input[type='date']");
+                dateInput.valueAsDate = new Date();
+                dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
             </script>
         </p>
 
@@ -59,17 +64,16 @@
                 <div>Le Président</div>
                 <strong>METODA Gilles</strong>
             </div>
-            <div style="position: relative">
-                <div class="badge"></div>
+            <div class="badge">
+                <div class="badge-img"></div>
                 <span class="badge-label">La R.A.C.H.E.</span>
             </div>
             <div>
-                <div>Chargé<span id="ee"></span> de Formation</div>
-                <!-- prettier-ignore -->
+                <div>Chargé<span id="ee">e</span> de Formation</div>
                 <strong>
-            L<span id="ea"></span>
-            stagiaire
-        </strong>
+                    L<span id="ea">a</span>
+                    stagiaire
+                </strong>
                 <script>
                     // masculin || féminin
                     var xy = [Math.round(Math.random())];
@@ -78,13 +82,8 @@
                 </script>
             </div>
         </div>
-        <div style="text-align: right">
-            <a
-                href="https://www.la-rache.com"
-                style="color: black; text-decoration: underline"
-            >
-                www.la-rache.com
-            </a>
+        <div class="certificat-link">
+            <a href="https://www.la-rache.com"> www.la-rache.com </a>
         </div>
     </div>
 </div>
@@ -142,6 +141,10 @@
     }
 
     .badge {
+        position: relative;
+    }
+
+    .badge-img {
         -webkit-mask: url(img/badge.svg) no-repeat center / contain;
         -moz-mask: url(img/badge.svg) no-repeat center / contain;
         mask: url(img/badge.svg) no-repeat center / contain;
@@ -176,7 +179,7 @@
         -moz-mask: none;
         mask: none;
     }
-    .screenshot .badge {
+    .screenshot .badge-img {
         background: url(img/badge.png) no-repeat center;
         background-size: contain;
         -webkit-mask: none;
@@ -194,10 +197,14 @@
         padding: 0;
     }
 
-    input[type="date"] {
+    /* pour cacher l'input pendant le screenshot et surtout son icone 'datepicker' */
+    input[type="date"],
+    input[type="date"] + span {
         display: inline-block;
         height: 1.2em;
-        width: 120px;
+        margin: 0;
+        padding: 0;
+        width: 130px;
         text-align: left;
     }
 
@@ -205,6 +212,17 @@
     input[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
         -webkit-appearance: none;
+        appearance: none;
+    }
+
+    input[type="date"] + span {
+        display: none;
+    }
+    .screenshot input[type="date"] {
+        display: none;
+    }
+    .screenshot input[type="date"] + span {
+        display: inline-block;
     }
 
     #certificat p {
@@ -222,9 +240,18 @@
         width: 100%;
         text-align: center;
     }
+
+    .certificat-link {
+        text-align: right;
+    }
+
+    .certificat-link a {
+        color: black;
+        text-decoration: underline;
+    }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="js/vendor/dom-to-image.min.js"></script>
 <script>
     function download() {
         const certificat = document.getElementById("certificat-wrap");
