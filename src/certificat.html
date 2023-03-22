@@ -23,27 +23,20 @@
                 placeholder="Prénom NOM"
             />
             <script>
-                document
-                    .getElementById("certif-name")
-                    .addEventListener("input", () => {
-                        const name =
-                            document.getElementById("certif-name").value;
-                        history.replaceState("","",window.location.pathname + (name ? `#${name}` : "")); //prettier-ignore
-                    });
+                // prettier-ignore
+                document.getElementById("certif-name").addEventListener("input", () => {
+                    const name = document.getElementById("certif-name").value;
+                    history.replaceState("", "", window.location.pathname + (name ? `#${name}` : ""));
+                });
 
                 if (document.location.hash && document.location.hash !== "#") {
                     document.getElementById("certif-name").value = decodeURI(
-                        document.location.hash.slice(
-                            1,
-                            document.location.hash.length
-                        )
+                        document.location.hash.slice(1, document.location.hash.length) // prettier-ignore
                     );
                 }
                 setTimeout(() => {
                     (document.documentElement || document.body).scrollTo({
-                        top:
-                            document.getElementById("certificat").offsetTop -
-                            50,
+                        top: document.getElementById("certificat").offsetTop - 50, // prettier-ignore
                         behavior: "smooth",
                     });
                 }, 300);
@@ -54,20 +47,14 @@
             pour un résultat approximativement optimale.
         </blockquote>
         <p>
-            Formé(e) à la cafèt’, le
-            <input
-                type="date"
-                onchange="this.nextElementSibling.textContent = this.valueAsDate.toLocaleDateString()"
-            /><span></span>
-            <!-- <span> pour le screenshot -->
+            Formé(e) à la cafèt’, le&nbsp;<input type="date" />
             <script>
-                const dateInput = document.querySelector("input[type='date']");
-                dateInput.valueAsDate = new Date();
-                dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
+                document.querySelector("input[type='date']").valueAsDate =
+                    new Date();
             </script>
         </p>
 
-        <div style="display: flex; justify-content: space-around">
+        <div class="certificat-footer">
             <div>
                 <div>Le Président</div>
                 <strong>METODA Gilles</strong>
@@ -127,8 +114,12 @@
     .certificat-header {
         display: flex;
         justify-content: center;
-
         font-weight: bold;
+    }
+
+    .certificat-footer {
+        display: flex;
+        justify-content: space-around;
     }
 
     .palme {
@@ -177,7 +168,7 @@
         text-shadow: -1px 1px 6px black;
     }
 
-    /* dom2image.js n'aime pas les mask */
+    /* dom2image.js n'aime pas les mask-image */
     .screenshot .palme {
         background: url(img/palme.png) no-repeat center;
         background-size: contain;
@@ -193,47 +184,43 @@
         mask: none;
     }
 
-    /* pour cacher l'input et surtout sont icone 'datepicker' */
-
-    input[type="date"],
-    input[type="date"] + span {
-        display: inline-block;
-        height: 1.2em;
-        margin: 0;
-        padding: 0;
-        width: 130px;
-        text-align: left;
-    }
-    input[type="date"] + span {
-        display: none;
-    }
-    .screenshot input[type="date"] {
-        display: none;
-    }
-    .screenshot input[type="date"] + span {
-        display: inline-block;
-    }
-
     input[type="date"],
     input[type="text"] {
+        -webkit-appearance: none;
+        appearance: none;
         border: none;
         font: inherit;
         background-color: transparent;
+        padding: 0;
     }
-    #certif-name {
-        padding: 0 10px;
-        font-family: cursive, "Brush Script MT";
-        font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
-            cursive;
 
-        font-size: 2em;
-        width: 100%;
-        text-align: center;
+    input[type="date"] {
+        display: inline-block;
+        height: 1.2em;
+        width: 120px;
+        text-align: left;
     }
+
     input[type="date"]::-webkit-inner-spin-button,
     input[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
         -webkit-appearance: none;
+    }
+
+    #certificat p {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #certif-name {
+        padding: 0 10px;
+        font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+            cursive;
+        font-size: 2em;
+        width: 100%;
+        text-align: center;
     }
 </style>
 
