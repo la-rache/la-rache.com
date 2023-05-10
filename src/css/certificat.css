@@ -1,0 +1,139 @@
+#certificat-wrap {
+    background: linear-gradient(45deg, #f2b400, #ffe85b);
+    padding: 0.5em;
+}
+#certificat {
+    font-size: 1.2em;
+    font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
+        "URW Bookman L", "Georgia Pro", Georgia, serif;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: white;
+    color: #444444;
+}
+
+#certificat h1 {
+    color: #936a34;
+}
+
+.certificat-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.certificat-footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.palme {
+    background: url(../img/palme.svg) no-repeat center/ contain;
+    width: 80px;
+    height: 128px;
+}
+
+.palme:first-child {
+    transform: scaleX(-1);
+}
+
+.badge {
+    position: relative;
+}
+
+.badge-img {
+    background: url(../img/badge.svg) no-repeat center / contain;
+    width: 164px;
+    height: 164px;
+}
+
+.badge-label {
+    top: 72px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="text"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+}
+
+/* pour cacher l'input pendant le screenshot et surtout son icone 'datepicker' */
+input[type="date"],
+input[type="date"] + span {
+    display: inline-block;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    width: 130px;
+    text-align: left;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="date"] + span {
+    display: none;
+}
+.screenshot input[type="date"] {
+    display: none;
+}
+.screenshot input[type="date"] + span {
+    display: inline-block;
+}
+
+#certificat p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#certif-name {
+    padding: 0 10px;
+    font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+        cursive;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.certificat-link {
+    text-align: right;
+}
+
+.certificat-link a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.certificat-actions {
+    text-align: center;
+}
+.certificat-actions button {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+.certificat-actions button span {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
