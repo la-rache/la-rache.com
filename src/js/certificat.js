@@ -1,16 +1,15 @@
-// prettier-ignore
 document.getElementById("certif-name").addEventListener("input", () => {
     const name = document.getElementById("certif-name").value;
-    history.replaceState("", "", window.location.pathname + (name ? `#${name}` : ""));
+    history.replaceState("", "", window.location.pathname + (name ? `#${name}` : "")); // prettier-ignore
 });
 
 if (document.location.hash && document.location.hash !== "#") {
     document.getElementById("certif-name").value = decodeURI(
-        document.location.hash.slice(1, document.location.hash.length) // prettier-ignore
+        document.location.hash.slice(1, document.location.hash.length)
     );
     setTimeout(() => {
         (document.documentElement || document.body).scrollTo({
-            top: document.getElementById("certificat").offsetTop - 70, // prettier-ignore
+            top: document.getElementById("certificat-actions").offsetTop,
             behavior: "smooth",
         });
     }, 300);
@@ -34,9 +33,7 @@ async function screenshot() {
             .then(function (blob) {
                 const file = new File(
                     [blob],
-                    `Certif_a_LARACHE_${
-                        document.getElementById("certif-name").value
-                    }.jpeg`,
+                    `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`, // prettier-ignore
                     { type: "image/jpeg" }
                 );
 
@@ -72,7 +69,6 @@ async function share(event) {
                     title: `Certificat de l'International Institute of La RACHE de ${
                         document.getElementById("certif-name").value
                     }`,
-                    //text: document.querySelector("meta[name='description']").getAttribute("content"),
                     url: document.location.href,
                 })
                 .then(() => console.log("Share with file was successful."))

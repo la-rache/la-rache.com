@@ -123,17 +123,17 @@ input[type="date"] + span {
     text-decoration: underline;
 }
 
-.certificat-actions {
+#certificat-actions {
     text-align: center;
 }
-.certificat-actions button {
+#certificat-actions button {
     display: inline-flex;
     flex-direction: row;
     align-content: center;
     align-items: center;
     margin-bottom: 0.5em;
 }
-.certificat-actions button span {
+#certificat-actions button span {
     font-size: 1.5em;
     line-height: 1.5;
 }
