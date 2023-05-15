@@ -59,45 +59,6 @@
     font-weight: bold;
 }
 
-input[type="date"],
-input[type="text"] {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    padding: 0;
-}
-
-/* pour cacher l'input pendant le screenshot et surtout son icone 'datepicker' */
-input[type="date"],
-input[type="date"] + span {
-    display: inline-block;
-    height: 1.2em;
-    margin: 0;
-    padding: 0;
-    width: 130px;
-    text-align: left;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-input[type="date"] + span {
-    display: none;
-}
-.screenshot input[type="date"] {
-    display: none;
-}
-.screenshot input[type="date"] + span {
-    display: inline-block;
-}
-
 #certificat p {
     display: flex;
     flex-direction: row;
@@ -106,12 +67,23 @@ input[type="date"] + span {
 }
 
 #certif-name {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
     padding: 0 10px;
     font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
         cursive;
     font-size: 2em;
     width: 100%;
     text-align: center;
+}
+
+#certif-name:hover,
+#certif-name:invalid {
+    box-shadow: 0 0 0 2px currentColor;
 }
 
 .certificat-link {
@@ -125,6 +97,12 @@ input[type="date"] + span {
 
 #certificat-actions {
     text-align: center;
+    position: sticky;
+    bottom: 0;
+    background: #ffffff82;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    padding-top: 0.5rem;
 }
 #certificat-actions button {
     display: inline-flex;
@@ -132,8 +110,29 @@ input[type="date"] + span {
     align-content: center;
     align-items: center;
     margin-bottom: 0.5em;
+    background-color: #0550a5;
+    color: white;
+    user-select: none;
+    border: none;
 }
 #certificat-actions button span {
     font-size: 1.5em;
     line-height: 1.5;
+}
+
+.screenshot {
+    animation: flash 0.3s ease-in-out 0s 1;
+}
+@keyframes flash {
+    from {
+        filter: brightness(0.5);
+    }
+
+    50% {
+        filter: brightness(3);
+    }
+
+    to {
+        filter: brightness(1);
+    }
 }

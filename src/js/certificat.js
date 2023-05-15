@@ -13,11 +13,12 @@ if (document.location.hash && document.location.hash !== "#") {
             behavior: "smooth",
         });
     }, 300);
+} else {
+    update();
 }
 
-const dateInput = document.querySelector("input[type='date']");
-dateInput.valueAsDate = new Date();
-dateInput.nextElementSibling.textContent = dateInput.valueAsDate.toLocaleDateString(); //prettier-ignore
+document.getElementById("certificat-date").textContent =
+    new Date().toLocaleDateString();
 
 // masculin || féminin
 var xy = [Math.round(Math.random())];
@@ -28,24 +29,26 @@ async function screenshot() {
     return new Promise(async (resolve, reject) => {
         const certificat = document.getElementById("certificat-wrap");
         certificat.classList.add("screenshot");
-        domtoimage
-            .toBlob(certificat, { quality: 0.95 })
-            .then(function (blob) {
-                const file = new File(
-                    [blob],
-                    `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`, // prettier-ignore
-                    { type: "image/jpeg" }
-                );
+        setTimeout(() => {
+            domtoimage
+                .toBlob(certificat, { quality: 0.95 })
+                .then(function (blob) {
+                    const file = new File(
+                        [blob],
+                        `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`, // prettier-ignore
+                        { type: "image/jpeg" }
+                    );
 
-                resolve(file);
-            })
-            .catch(function (error) {
-                console.error("domtoimage", error);
-                reject(error);
-            })
-            .finally(function () {
-                certificat.classList.remove("screenshot");
-            });
+                    resolve(file);
+                })
+                .catch(function (error) {
+                    console.error("domtoimage", error);
+                    reject(error);
+                })
+                .finally(function () {
+                    certificat.classList.remove("screenshot");
+                });
+        }, 300);
     });
 }
 
@@ -102,4 +105,9 @@ async function share(event) {
             event.target.style.width = "auto";
         }, 1000);
     }
+}
+
+function update() {
+    document.getElementById("certif-name").focus();
+    document.getElementById("certif-name").select();
 }
