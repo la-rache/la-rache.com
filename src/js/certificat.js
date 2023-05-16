@@ -1,15 +1,15 @@
-document.getElementById("certif-name").addEventListener("input", () => {
-    const name = document.getElementById("certif-name").value;
+document.getElementById("certificat-name").addEventListener("input", () => {
+    const name = document.getElementById("certificat-name").value;
     history.replaceState("", "", window.location.pathname + (name ? `#${name}` : "")); // prettier-ignore
 });
 
 if (document.location.hash && document.location.hash !== "#") {
-    document.getElementById("certif-name").value = decodeURI(
+    document.getElementById("certificat-name").value = decodeURI(
         document.location.hash.slice(1, document.location.hash.length)
     );
     setTimeout(() => {
         (document.documentElement || document.body).scrollTo({
-            top: document.getElementById("certificat-actions").offsetTop,
+            top: document.getElementById("certificat-blabla").offsetTop,
             behavior: "smooth",
         });
     }, 300);
@@ -35,7 +35,7 @@ async function screenshot() {
                 .then(function (blob) {
                     const file = new File(
                         [blob],
-                        `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`, // prettier-ignore
+                        `Certif_a_LARACHE_${document.getElementById("certificat-name").value}.jpeg`, // prettier-ignore
                         { type: "image/jpeg" }
                     );
 
@@ -48,7 +48,7 @@ async function screenshot() {
                 .finally(function () {
                     certificat.classList.remove("screenshot");
                 });
-        }, 300);
+        }, 500);
     });
 }
 
@@ -56,12 +56,13 @@ async function download() {
     const file = await screenshot();
     const fileURL = URL.createObjectURL(file);
     const link = document.createElement("a");
-    link.download = `Certif_a_LARACHE_${document.getElementById("certif-name").value}.jpeg`; //prettier-ignore
+    link.download = `Certif_a_LARACHE_${document.getElementById("certificat-name").value}.jpeg`; //prettier-ignore
     link.href = fileURL;
     link.click();
 }
 
 async function share(event) {
+    event.preventDefault();
     if (navigator.canShare) {
         if (navigator.canShare({ files: [new File([""], "")] })) {
             // share with screenshot
@@ -70,7 +71,7 @@ async function share(event) {
                 .share({
                     files: [file],
                     title: `Certificat de l'International Institute of La RACHE de ${
-                        document.getElementById("certif-name").value
+                        document.getElementById("certificat-name").value
                     }`,
                     url: document.location.href,
                 })
@@ -82,32 +83,30 @@ async function share(event) {
             // share without screenshot
             navigator.share({
                 title: `Certificat de l'International Institute of La RACHE de ${
-                    document.getElementById("certif-name").value
+                    document.getElementById("certificat-name").value
                 }`,
                 url: document.location.href,
             });
         }
     } else {
         // copy to clipcoard
-        event.target.style.width = event.target.offsetWidth + "px";
+        const shareBtn = document.getElementById("certificat-actions-share");
+
         try {
             await navigator.clipboard.writeText(document.location.href);
-            event.target.innerHTML = "<span>👌</span> Lien copié!";
+            shareBtn.innerHTML = "<span>👌</span> Lien copié!";
         } catch (err) {
-            event.target.innerHTML =
-                "<span>😭</span> Erreur à la copie du lien";
+            shareBtn.innerHTML = "<span>😭</span> Erreur à la copie du lien";
             console.error("Failed to copy: ", err);
         }
 
         setTimeout(() => {
-            event.target.innerHTML =
-                "<span>📤</span> Partager au reste du monde";
-            event.target.style.width = "auto";
+            shareBtn.innerHTML = "<span>📤</span> Partager";
         }, 1000);
     }
 }
 
 function update() {
-    document.getElementById("certif-name").focus();
-    document.getElementById("certif-name").select();
+    document.getElementById("certificat-name").focus();
+    document.getElementById("certificat-name").select();
 }
