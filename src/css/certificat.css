@@ -66,7 +66,7 @@
     align-items: center;
 }
 
-#certif-name {
+#certificat-name {
     -webkit-appearance: none;
     appearance: none;
     border: none;
@@ -81,9 +81,15 @@
     text-align: center;
 }
 
-#certif-name:hover,
-#certif-name:invalid {
+#certificat-name:hover,
+#certificat-name:invalid {
     box-shadow: 0 0 0 2px currentColor;
+}
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+input:autofill {
+    background-clip: text;
 }
 
 .certificat-link {
@@ -110,10 +116,10 @@
     align-content: center;
     align-items: center;
     margin-bottom: 0.5em;
-    background-color: #0550a5;
-    color: white;
     user-select: none;
-    border: none;
+    background-color: transparent;
+    color: #0550a5;
+    border: 1px solid #0550a5;
 }
 #certificat-actions button span {
     font-size: 1.5em;
