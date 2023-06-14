@@ -4,9 +4,15 @@
   "description": "Site web la-rache.com",
   "devDependencies": {
     "grunt": "^1.4.1",
+    "grunt-cache-bust": "^1.7.0",
     "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-hash": "^0.5.0",
     "grunt-html": "^16.0.0",
     "grunt-text-replace": "^0.4.0"
   },
