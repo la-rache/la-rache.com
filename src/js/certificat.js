@@ -1,10 +1,12 @@
-document.getElementById("certificat-name").addEventListener("input", () => {
-    const name = document.getElementById("certificat-name").value;
+const nameElement = document.getElementById("certificat-name");
+
+nameElement.addEventListener("input", () => {
+    const name = nameElement.value;
     history.replaceState("", "", window.location.pathname + (name ? `#${name}` : "")); // prettier-ignore
 });
 
 if (document.location.hash && document.location.hash !== "#") {
-    document.getElementById("certificat-name").value = decodeURI(
+    nameElement.value = decodeURI(
         document.location.hash.slice(1, document.location.hash.length)
     );
     setTimeout(() => {
@@ -14,13 +16,13 @@ if (document.location.hash && document.location.hash !== "#") {
         });
     }, 300);
 } else {
-    update();
+    nameElement.focus();
 }
 
 document.getElementById("certificat-date").textContent =
     new Date().toLocaleDateString();
 
-// masculin || féminin
+// stagiaire : masculin || féminin
 var xy = [Math.round(Math.random())];
 document.getElementById("ea").textContent = ["e", "a"][xy];
 document.getElementById("ee").textContent = ["", "e"][xy];
@@ -35,7 +37,7 @@ async function screenshot() {
                 .then(function (blob) {
                     const file = new File(
                         [blob],
-                        `Certif_a_LARACHE_${document.getElementById("certificat-name").value}.jpeg`, // prettier-ignore
+                        `Certif_a_LARACHE_${nameElement.value}.jpeg`, // prettier-ignore
                         { type: "image/jpeg" }
                     );
 
@@ -56,7 +58,7 @@ async function download() {
     const file = await screenshot();
     const fileURL = URL.createObjectURL(file);
     const link = document.createElement("a");
-    link.download = `Certif_a_LARACHE_${document.getElementById("certificat-name").value}.jpeg`; //prettier-ignore
+    link.download = `Certif_a_LARACHE_${nameElement.value}.jpeg`; //prettier-ignore
     link.href = fileURL;
     link.click();
 }
@@ -70,9 +72,7 @@ async function share(event) {
             navigator
                 .share({
                     files: [file],
-                    title: `Certificat de l'International Institute of La RACHE de ${
-                        document.getElementById("certificat-name").value
-                    }`,
+                    title: `Certificat de l'International Institute of La RACHE de ${nameElement.value}`,
                     url: document.location.href,
                 })
                 .then(() => console.log("Share with file was successful."))
@@ -82,9 +82,7 @@ async function share(event) {
         } else {
             // share without screenshot
             navigator.share({
-                title: `Certificat de l'International Institute of La RACHE de ${
-                    document.getElementById("certificat-name").value
-                }`,
+                title: `Certificat de l'International Institute of La RACHE de ${nameElement.value}`,
                 url: document.location.href,
             });
         }
@@ -106,7 +104,8 @@ async function share(event) {
     }
 }
 
-function update() {
-    document.getElementById("certificat-name").focus();
-    document.getElementById("certificat-name").select();
+function resetName() {
+    nameElement.value = "";
+    nameElement.dispatchEvent(new Event("input"));
+    nameElement.focus();
 }
