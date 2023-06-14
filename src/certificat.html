@@ -1,0 +1,87 @@
+{{HEADER}}
+
+<p id="certificat-blabla">
+    Ce certificat est valable à vie et est certifié par la blockchain.<br />
+    100% numérique et infalsifiable, bilingue français/franglais.<br />
+    Il peut être utilisé en lieu et place d'un CV.
+</p>
+
+<form onsubmit="share(event)">
+    <div id="certificat-wrap">
+        <div id="certificat">
+            <div class="certificat-header">
+                <div class="palme"></div>
+                <!-- https://svgsilh.com/image/2109235.html -->
+                <h1>
+                    <div style="font-weight: lighter">
+                        Certificat de réussite
+                    </div>
+                    <div style="font-size: 20px">
+                        International Institute of <br />La RACHE
+                    </div>
+                </h1>
+                <div class="palme"></div>
+            </div>
+
+            <div>100% de réussite (ou presque) pour</div>
+            <p>
+                <input
+                    type="text"
+                    id="certificat-name"
+                    name="name"
+                    spellcheck="false"
+                    placeholder="Prénom NOM"
+                    required
+                />
+            </p>
+            <blockquote>
+                Qui saura travailler à La Rache dans n'importe quel projet pour
+                un résultat hasardeux.
+            </blockquote>
+            <p>
+                Formé(e) à la cafèt’, le&nbsp;<span id="certificat-date"
+                    >../../....</span
+                >
+            </p>
+
+            <div class="certificat-footer">
+                <div>
+                    <div>Le Président</div>
+                    <strong>METODA Gilles</strong>
+                </div>
+                <div class="badge">
+                    <div class="badge-img"></div>
+                    <span class="badge-label">La RACHE</span>
+                </div>
+                <div>
+                    <div>Chargé<span id="ee">e</span> de Formation</div>
+                    <strong>
+                        L<span id="ea">a</span>
+                        stagiaire
+                    </strong>
+                </div>
+            </div>
+            <div class="certificat-link">
+                <a href="https://www.la-rache.com"> www.la-rache.com </a>
+            </div>
+        </div>
+    </div>
+
+    <p id="certificat-actions">
+        <button type="button" onclick="resetName()">
+            <span>🖊️</span> Modifier
+        </button>
+        &nbsp;
+        <button type="submit" id="certificat-actions-share">
+            <span>📤</span> Partager
+        </button>
+        &nbsp;
+        <button type="button" onclick="download()">
+            <span>📸</span> Enregistrer
+        </button>
+    </p>
+</form>
+<link rel="stylesheet" href="css/certificat.css" />
+<script src="js/vendor/dom-to-image.min.js" defer></script>
+<script src="js/certificat.js" defer></script>
+{{FOOTER}}

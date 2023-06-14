@@ -1,0 +1,154 @@
+#certificat-wrap {
+    background: linear-gradient(45deg, #f2b400, #ffe85b);
+    padding: 0.5em;
+}
+#certificat {
+    font-size: 1.2em;
+    font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
+        "URW Bookman L", "Georgia Pro", Georgia, serif;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: white;
+    color: #444444;
+}
+
+#certificat h1 {
+    color: #936a34;
+}
+
+.certificat-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.certificat-footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.palme {
+    background: url(../img/palme.svg) no-repeat center/ contain;
+    width: 80px;
+    height: 128px;
+}
+
+.palme:first-child {
+    transform: scaleX(-1);
+}
+
+.badge {
+    position: relative;
+}
+
+.badge-img {
+    background: url(../img/badge.svg) no-repeat center / contain;
+    width: 164px;
+    height: 164px;
+}
+
+.badge-label {
+    top: 72px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#certificat p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#certificat-name {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0 10px;
+    font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+        cursive;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+#certificat-name:hover,
+#certificat-name:invalid {
+    box-shadow: 0 0 0 2px currentColor;
+}
+.screenshot #certificat-name {
+    box-shadow: none;
+    outline: none;
+}
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:autofill {
+    background-clip: text;
+}
+
+.certificat-link {
+    text-align: right;
+}
+
+.certificat-link a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+#certificat-actions {
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    background: #ffffff82;
+    z-index: 1;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding-top: 0.5rem;
+}
+#certificat-actions button {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+    user-select: none;
+    background: #ffffff82;
+    color: #0550a5;
+    border: 1px solid #0550a5;
+}
+#certificat-actions button:hover,
+#certificat-actions button:focus {
+    background-color: #0550a5;
+    color: #fff;
+}
+#certificat-actions button span {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+.screenshot {
+    animation: flash 0.3s ease-in-out 0s 1;
+}
+@keyframes flash {
+    from {
+        filter: brightness(0.5);
+    }
+
+    50% {
+        filter: brightness(3);
+    }
+
+    to {
+        filter: brightness(1);
+    }
+}
