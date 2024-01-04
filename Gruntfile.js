@@ -4,6 +4,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json"),
         clean: ["build/"],
         replace: {
+            options: {
+                livereload: true,
+            },
             html: {
                 src: ["src/*.html"],
                 dest: "build/",
@@ -60,12 +63,14 @@ module.exports = function (grunt) {
             all: ["build/*.html"],
         },
         watch: {
-            all: {
-                files: ["src/**"],
-                tasks: ["replace", "copy", "test"],
-                options: {
-                    spawn: false,
-                },
+            options: { livereload: true },
+            replace: {
+                files: ["**/*.*", "!build/**/*.*"],
+                tasks: ["replace"],
+            },
+            copy: {
+                files: ["**/*.*", "!build/**/*.*"],
+                tasks: ["copy"],
             },
         },
         cacheBust: {
@@ -133,6 +138,17 @@ module.exports = function (grunt) {
                 ],
             },
         },
+        connect: {
+            server: {
+                options: {
+                    base: "build",
+                    hostname: "localhost",
+                    port: 8042,
+                    livereload: true,
+                    open: true,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks("grunt-contrib-copy");
@@ -144,6 +160,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
+    grunt.loadNpmTasks("grunt-contrib-connect");
 
     grunt.registerTask("test", ["htmllint"]);
     grunt.registerTask("default", [
@@ -155,4 +172,7 @@ module.exports = function (grunt) {
         "cssmin",
         "htmlmin",
     ]);
+
+    // Start web server
+    grunt.registerTask("serve", ["replace", "copy", "connect:server", "watch"]);
 };
