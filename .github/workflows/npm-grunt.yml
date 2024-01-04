@@ -1,4 +1,4 @@
-name: Build & deploy
+name: Build à La Rache
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18.x'
