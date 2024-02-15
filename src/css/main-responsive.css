@@ -2,7 +2,8 @@
     #page {
         width: 100%;
         border: none;
-        padding-bottom: 20px;
+        overflow-x: hidden;
+        height: 100vh;
     }
 
     #top {
@@ -13,14 +14,56 @@
     #mid {
         width: 100%;
         border: none;
+        position: relative;
     }
 
     #main {
         width: calc(100% - 14px);
     }
 
+    label[for="burgermenu-checkbox"] {
+        display: inline-block;
+    }
+
     #side {
         width: calc(100% - 20px);
+        position: absolute;
+        transform: translateX(100%);
+        transition: 0.3s ease-in-out;
+        background: white;
+        left: 0;
+        z-index: 5;
+    }
+
+    #burgermenu-checkbox
+        + #page
+        label[for="burgermenu-checkbox"]
+        span.burgermenu-close {
+        display: none;
+    }
+    #burgermenu-checkbox
+        + #page
+        label[for="burgermenu-checkbox"]
+        span.burgermenu-open {
+        display: inline-block;
+    }
+
+    #burgermenu-checkbox:checked
+        + #page
+        label[for="burgermenu-checkbox"]
+        span.burgermenu-close {
+        display: inline-block;
+    }
+    #burgermenu-checkbox:checked
+        + #page
+        label[for="burgermenu-checkbox"]
+        span.burgermenu-open {
+        display: none;
+    }
+
+    #burgermenu-checkbox:checked + #page #side {
+        transform: translateX(0);
+        box-shadow: 0 14px 12px 6px #0550a578;
     }
 
     img {

@@ -9,7 +9,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
  <linearGradient id="GradientGold" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0%" stop-color="#ffe85b" />
-      <stop offset="100%" stop-color="#f2b400"   />
+      <stop offset="100%" stop-color="#ff9900"   />
     </linearGradient>
 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
 fill="url(#GradientGold)" stroke="none">

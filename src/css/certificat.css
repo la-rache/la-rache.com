@@ -1,17 +1,17 @@
 #certificat-wrap {
-    background: linear-gradient(45deg, #f2b400, #ffe85b);
+    background: linear-gradient(45deg, #ff9900, #ffe85b);
     padding: 0.5em;
 }
 #certificat {
-    font-size: 1.2em;
     font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
         "URW Bookman L", "Georgia Pro", Georgia, serif;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 0.5em;
     background-color: white;
     color: #444444;
+    text-shadow: 0px 1px 0px white;
 }
 
 #certificat h1 {
@@ -21,23 +21,39 @@
 .certificat-header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
+    align-items: flex-start;
+    background-color: white;
+    position: relative;
+}
+
+.certificat-header > div:nth-child(2) {
+    z-index: 2;
+    position: relative;
 }
 
 .certificat-footer {
+    display: grid;
+    grid-template-columns: calc(50% - 50px) 100px calc(50% - 50px);
+}
+
+.certificat-footer div:last-child {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .palme {
     background: url(../img/palme.svg) no-repeat center/ contain;
-    width: 80px;
-    height: 128px;
+    width: 92px;
+    height: 192px;
+    position: absolute;
+    right: -0.75em;
 }
 
 .palme:first-child {
     transform: scaleX(-1);
+    left: -0.75em;
+    z-index: 1;
 }
 
 .badge {
@@ -46,24 +62,31 @@
 
 .badge-img {
     background: url(../img/badge.svg) no-repeat center / contain;
-    width: 164px;
-    height: 164px;
+    width: 100px;
+    height: 100px;
 }
 
 .badge-label {
-    top: 72px;
+    top: 42px;
     position: absolute;
     width: 100%;
     left: 0;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
+    color: white;
+    text-shadow: none;
 }
 
-#certificat p {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#certificat blockquote {
+    margin-top: 0;
+    z-index: 2;
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    #certificat blockquote {
+        margin: 0;
+    }
 }
 
 #certificat-name {
@@ -72,11 +95,13 @@
     border: none;
     font: inherit;
     color: inherit;
+    text-shadow: inherit;
     background-color: transparent;
-    padding: 0 10px;
+
     font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
         cursive;
     font-size: 2em;
+    font-weight: bold;
     width: 100%;
     text-align: center;
 }
@@ -98,11 +123,12 @@ input:autofill {
 
 .certificat-link {
     text-align: right;
+    margin-top: 1em;
 }
 
 .certificat-link a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #certificat-actions {
@@ -110,45 +136,33 @@ input:autofill {
     position: sticky;
     bottom: 0;
     background: #ffffff82;
-    z-index: 1;
+    z-index: 3;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     padding-top: 0.5rem;
-}
-#certificat-actions button {
-    display: inline-flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    margin-bottom: 0.5em;
-    user-select: none;
-    background: #ffffff82;
-    color: #0550a5;
-    border: 1px solid #0550a5;
-}
-#certificat-actions button:hover,
-#certificat-actions button:focus {
-    background-color: #0550a5;
-    color: #fff;
-}
-#certificat-actions button span {
-    font-size: 1.5em;
-    line-height: 1.5;
 }
 
 .screenshot {
     animation: flash 0.3s ease-in-out 0s 1;
 }
+
+.screenshot + p button {
+    cursor: progress;
+}
+
 @keyframes flash {
     from {
         filter: brightness(0.5);
+        transform: scale(1);
     }
 
     50% {
         filter: brightness(3);
+        transform: scale(0.95);
     }
 
     to {
         filter: brightness(1);
+        transform: scale(1);
     }
 }

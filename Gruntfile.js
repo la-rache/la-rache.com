@@ -65,11 +65,11 @@ module.exports = function (grunt) {
         watch: {
             options: { livereload: true },
             replace: {
-                files: ["**/*.*", "!build/**/*.*"],
+                files: ["src/**/*.*"],
                 tasks: ["replace"],
             },
             copy: {
-                files: ["**/*.*", "!build/**/*.*"],
+                files: ["src/**/*.*"],
                 tasks: ["copy"],
             },
         },

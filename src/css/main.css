@@ -92,7 +92,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 16px;
 }
 
@@ -104,7 +105,6 @@ hr {
     background-color: #0550a5;
 }
 
- 
 img {
     border: none;
 }
@@ -126,7 +126,6 @@ h5 {
 
 a {
     color: #35b;
-    text-decoration: none;
 }
 a:hover {
     color: #b53;
@@ -190,11 +189,43 @@ a:hover {
     color: #225;
 }
 
+#burgermenu-checkbox {
+    display: none;
+}
+label[for="burgermenu-checkbox"] {
+    display: none;
+    user-select: none;
+    background: #fff;
+    color: #0550a5;
+    line-height: 1.5;
+    text-underline-offset: 3px;
+    padding-right: 0.5em;
+    cursor: pointer;
+}
+
+label[for="burgermenu-checkbox"]:hover,
+label[for="burgermenu-checkbox"]:focus {
+    text-decoration: underline;
+}
+
+label[for="burgermenu-checkbox"] span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 #top h1 {
+    display: inline-block;
     margin: 0;
     padding: 0 0 0 10px;
     color: #000000;
     font-size: 24px;
+}
+#top h1 a {
+    text-decoration: none;
+}
+#top h1 a:hover,
+#top h1 a:focus {
+    text-decoration: underline;
 }
 #top h2 {
     margin: 0;
@@ -204,46 +235,78 @@ a:hover {
 }
 
 /* Menu */
-#side a {
+#side li a {
     text-decoration: none;
     color: #ffffff;
+}
+#side li {
+    padding: 0;
+    background-color: transparent;
+}
+
+#side li a {
+    padding: 5px 0 5px 15px;
+    display: block;
+    color: #ffffff;
+    background-color: #0550a5;
+    text-align: left;
+    border: 1px solid currentColor;
+}
+
+#side li a:hover,
+#side li a:focus {
+    display: block;
+    background-color: #0550a578;
+}
+#side li a.active {
+    color: #0550a5;
+    background-color: #ffffff;
+}
+
+button,
+.btn {
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+    user-select: none;
+    padding: 5px;
+    background: #ffffff82;
+    color: #0550a5;
+    border: 1px solid currentColor;
+}
+
+button:hover,
+button:focus,
+.btn:hover,
+.btn:focus {
+    background-color: #0550a5;
+    color: #fff;
+}
+button:active,
+.btn:active {
+    box-shadow: inset 0px 0px 1px 2px rgb(255 255 255), 0px 0px 1px 1px #0550a5;
+    background-color: #0550a5;
+    color: #fff;
+}
+
+button .icon,
+.btn .icon {
+    font-size: 1.2em;
+}
+button img,
+.btn img {
+    background: white;
+    border-radius: 100%;
+    padding: 1px;
 }
 
 .zul {
     padding: 13px 0 0;
     margin: 10px 0 0 0;
     list-style: none;
-}
-.zli1,
-.zli2,
-.zli3,
-.zli4 {
-    background-color: #0550a5;
-    display: block;
-    text-align: left;
-    margin-top: 0.15em;
-    padding-left: 15px;
-    color: #ffffff;
-}
-.zon {
-    /*background-image: url(/web/20120921091425/http://www.risacher.com/la-rache/theme/rache/images/pge1.png);*/
-    display: block;
-    margin-top: 0.15em;
-    padding-left: 15px;
-    color: #ffffff;
-    background-color: #0550a5;
-}
-.zli1 {
-    margin-left: 0;
-}
-.zli2 {
-    margin-left: 16px;
-}
-.zli3 {
-    margin-left: 32px;
-}
-.zli4 {
-    margin-left: 48px;
 }
 
 #zadmin {
@@ -441,163 +504,7 @@ a:hover {
     }
 }
 
-/* https://github.com/simonwhitaker/github-fork-ribbon-css */
-
-.github-fork-ribbon {
-    width: 12.1em;
-    height: 12.1em;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    z-index: 9999;
-    pointer-events: none;
-    font-size: 13px;
-    text-decoration: none;
-    text-indent: -999999px;
-}
-
-.github-fork-ribbon.fixed {
-    position: fixed;
-}
-
-.github-fork-ribbon:hover,
-.github-fork-ribbon:active {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.github-fork-ribbon:before,
-.github-fork-ribbon:after {
-    /* The right and left classes determine the side we attach our banner to */
-    position: absolute;
-    display: block;
-    width: 15.38em;
-    height: 1.54em;
-
-    top: 3.23em;
-    right: -3.23em;
-
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.github-fork-ribbon:before {
-    content: "";
-
-    /* Add a bit of padding to give some substance outside the "stitching" */
-    padding: 0.38em 0;
-
-    /* Set the base colour */
-    background-color: rgb(111, 170, 0);
-
-    /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0)),
-        to(rgba(0, 0, 0, 0.15))
-    );
-    background-image: -webkit-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.15)
-    );
-    background-image: -moz-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.15)
-    );
-    background-image: -ms-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.15)
-    );
-    background-image: -o-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.15)
-    );
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.15)
-    );
-
-    /* Add a drop shadow */
-    -webkit-box-shadow: 0 0.15em 0.23em 0 rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0.15em 0.23em 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0.15em 0.23em 0 rgba(0, 0, 0, 0.5);
-
-    pointer-events: auto;
-}
-
-.github-fork-ribbon:after {
-    /* Set the text from the data-ribbon attribute */
-    content: attr(data-ribbon);
-
-    /* Set the text properties */
-    color: #fff;
-    font: 700 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.54em;
-    text-decoration: none;
-    text-shadow: 0 -0.08em rgba(0, 0, 0, 0.5);
-    text-align: center;
-    text-indent: 0;
-
-    /* Set the layout properties */
-    padding: 0.15em 0;
-    margin: 0.15em 0;
-
-    /* Add "stitching" effect */
-    border-width: 0.08em 0;
-    border-style: dotted;
-    border-color: #fff;
-    border-color: rgba(255, 255, 255, 0.7);
-}
-
-.github-fork-ribbon.left-top,
-.github-fork-ribbon.left-bottom {
-    right: auto;
-    left: 0;
-}
-
-.github-fork-ribbon.left-bottom,
-.github-fork-ribbon.right-bottom {
-    top: auto;
-    bottom: 0;
-}
-
-.github-fork-ribbon.left-top:before,
-.github-fork-ribbon.left-top:after,
-.github-fork-ribbon.left-bottom:before,
-.github-fork-ribbon.left-bottom:after {
-    right: auto;
-    left: -3.23em;
-}
-
-.github-fork-ribbon.left-bottom:before,
-.github-fork-ribbon.left-bottom:after,
-.github-fork-ribbon.right-bottom:before,
-.github-fork-ribbon.right-bottom:after {
-    top: auto;
-    bottom: 3.23em;
-}
-
-.github-fork-ribbon.left-top:before,
-.github-fork-ribbon.left-top:after,
-.github-fork-ribbon.right-bottom:before,
-.github-fork-ribbon.right-bottom:after {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+navbar {
+    display: flex;
+    justify-content: space-between;
 }
