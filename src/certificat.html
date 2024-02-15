@@ -6,36 +6,38 @@
     Il peut être utilisé en lieu et place d'un CV.
 </p>
 
-<form onsubmit="share(event)">
+<form onsubmit="submitCertif(event)">
     <div id="certificat-wrap">
         <div id="certificat">
             <div class="certificat-header">
                 <div class="palme"></div>
                 <!-- https://svgsilh.com/image/2109235.html -->
-                <h1>
-                    <div style="font-weight: lighter">
-                        Certificat de réussite
-                    </div>
-                    <div style="font-size: 20px">
-                        International Institute of <br />La RACHE
-                    </div>
-                </h1>
+                <div>
+                    <h1>
+                        <div style="font-weight: lighter">
+                            Certificat de réussite
+                        </div>
+                        <div id="ilar">
+                            International Institute of La&nbsp;RACHE
+                        </div>
+                    </h1>
+                    <div>100% de réussite (ou presque) pour</div>
+                    <input
+                        type="text"
+                        id="certificat-name"
+                        name="name"
+                        spellcheck="false"
+                        placeholder="Prénom NOM"
+                        required
+                    />
+                </div>
+
                 <div class="palme"></div>
             </div>
 
-            <div>100% de réussite (ou presque) pour</div>
-            <p>
-                <input
-                    type="text"
-                    id="certificat-name"
-                    name="name"
-                    spellcheck="false"
-                    placeholder="Prénom NOM"
-                    required
-                />
-            </p>
             <blockquote>
-                Qui est capable de mener à bien n'importe quel projet, même à l'arrache.
+                Qui est capable de mener à bien n'importe quel projet, même à
+                l'arrache.
             </blockquote>
             <p>
                 Formé(e) à la cafèt’, le&nbsp;<span id="certificat-date"
@@ -53,15 +55,17 @@
                     <span class="badge-label">La RACHE</span>
                 </div>
                 <div>
-                    <div>Chargé<span id="ee">e</span> de Formation</div>
-                    <strong>
-                        L<span id="ea">a</span>
-                        stagiaire
-                    </strong>
+                    <div>
+                        <div>Chargé<span id="ee">e</span> de Formation</div>
+                        <strong>
+                            L<span id="ea">a</span>
+                            stagiaire
+                        </strong>
+                    </div>
+                    <div class="certificat-link">
+                        <a href="https://www.la-rache.com">la-rache.com</a>
+                    </div>
                 </div>
-            </div>
-            <div class="certificat-link">
-                <a href="https://www.la-rache.com"> www.la-rache.com </a>
             </div>
         </div>
     </div>
@@ -70,11 +74,15 @@
         <button type="button" onclick="resetName()">
             <span>🖊️</span> Modifier
         </button>
-        &nbsp;
-        <button type="submit" id="certificat-actions-share">
+        <button type="button" id="certificat-actions-share" onclick="share()">
             <span>📤</span> Partager
         </button>
-        &nbsp;
+        <button type="button" id="certificat-actions-copy" onclick="copy()">
+            <span>🔗</span> Copier le lien
+        </button>
+        <!-- <button type="button" id="certificat-actions-copy-img"  onclick="copyImg()">
+            <span>📸</span> Copier le certificat
+        </button> -->
         <button type="button" onclick="download()">
             <span>📸</span> Enregistrer
         </button>
