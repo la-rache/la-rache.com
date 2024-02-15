@@ -3,7 +3,6 @@
     padding: 0.5em;
 }
 #certificat {
-    font-size: 1.2em;
     font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
         "URW Bookman L", "Georgia Pro", Georgia, serif;
     text-align: center;
@@ -12,6 +11,7 @@
     padding: 1em;
     background-color: white;
     color: #444444;
+    text-shadow: 0px 1px 0px white;
 }
 
 #certificat h1 {
@@ -21,8 +21,14 @@
 .certificat-header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
+    align-items: flex-start;
+    background-color: white;
+    position: relative;
+}
+
+.certificat-header > div:nth-child(2) {
+    z-index: 2;
+    position: relative;
 }
 
 .certificat-footer {
@@ -32,12 +38,16 @@
 
 .palme {
     background: url(../img/palme.svg) no-repeat center/ contain;
-    width: 80px;
-    height: 128px;
+    width: 92px;
+    height: 192px;
+    position: absolute;
+    right: -0.75em;
 }
 
 .palme:first-child {
     transform: scaleX(-1);
+    left: -0.75em;
+    z-index: 1;
 }
 
 .badge {
@@ -46,24 +56,23 @@
 
 .badge-img {
     background: url(../img/badge.svg) no-repeat center / contain;
-    width: 164px;
-    height: 164px;
+    width: 100px;
+    height: 100px;
 }
 
 .badge-label {
-    top: 72px;
+    top: 42px;
     position: absolute;
     width: 100%;
     left: 0;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
 }
 
-#certificat p {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#certificat blockquote {
+    margin-top: 0;
+    z-index: 2;
+    position: relative;
 }
 
 #certificat-name {
@@ -72,11 +81,13 @@
     border: none;
     font: inherit;
     color: inherit;
+    text-shadow: inherit;
     background-color: transparent;
-    padding: 0 10px;
+
     font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
         cursive;
     font-size: 2em;
+    font-weight: bold;
     width: 100%;
     text-align: center;
 }
@@ -98,11 +109,11 @@ input:autofill {
 
 .certificat-link {
     text-align: right;
+    margin-top: 1em;
 }
 
 .certificat-link a {
     color: inherit;
-    text-decoration: underline;
 }
 
 #certificat-actions {
@@ -110,7 +121,7 @@ input:autofill {
     position: sticky;
     bottom: 0;
     background: #ffffff82;
-    z-index: 1;
+    z-index: 3;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     padding-top: 0.5rem;
