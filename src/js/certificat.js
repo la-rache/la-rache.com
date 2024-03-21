@@ -12,6 +12,12 @@ if (document.location.hash && document.location.hash !== "#") {
 } else {
     // nameElement.focus();
 }
+setTimeout(() => {
+    (document.documentElement || document.body).scrollTo({
+        top: document.getElementById("certificat-blabla").offsetTop,
+        behavior: "smooth",
+    });
+}, 300);
 
 document.getElementById("certificat-date").textContent =
     new Date().toLocaleDateString();
