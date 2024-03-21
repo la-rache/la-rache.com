@@ -2,8 +2,8 @@
     #page {
         width: 100%;
         border: none;
-        overflow-x: hidden;
-        height: 100vh;
+        /* overflow-x: hidden; */
+        /* height: 100vh; */
     }
 
     #top {
