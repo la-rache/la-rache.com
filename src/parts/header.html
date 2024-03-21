@@ -85,7 +85,7 @@
         <div id="page">
             <div id="top">
                 <navbar>
-                <h1><a href="/">La-rache.com</a></h1>
+                <h1><a href=".">La-rache.com</a></h1>
                 <label for="burgermenu-checkbox">
                     <span class="burgermenu-open">≡</span><span class="burgermenu-close">✖</span>
                      Menu
@@ -132,9 +132,11 @@
                         <li class="zli1"><a href="liens.html">Liens</a></li>
                     </ul>
                     <script>
-                        if(!!document.location.pathname.slice(1)){
+                        const pageName = document.location.pathname.split("/").pop();
+                        const navItem = document.querySelector(`#side li a[href='${pageName}']`);
+                        if(!!pageName && !!navItem){                             
                             document.querySelector(`#side li a.active`).classList.remove('active')
-                            document.querySelector(`#side li a[href='${document.location.pathname.split("/").pop()}']`).classList.add('active')
+                            document.querySelector(`#side li a[href='${pageName}']`).classList.add('active')
                         }
                     </script>
                     <a href="/"><img
