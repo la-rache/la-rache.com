@@ -134,7 +134,7 @@
                     <script>
                         if(!!document.location.pathname.slice(1)){
                             document.querySelector(`#side li a.active`).classList.remove('active')
-                            document.querySelector(`#side li a[href='${document.location.pathname.slice(1)}']`).classList.add('active')
+                            document.querySelector(`#side li a[href='${document.location.pathname.split("/").pop()}']`).classList.add('active')
                         }
                     </script>
                     <a href="/"><img
