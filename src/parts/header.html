@@ -133,8 +133,8 @@
                     </ul>
                     <script>
                         const pageName = document.location.pathname.split("/").pop();
-                        const navItem = document.querySelector(`#side li a[href='${pageName}']`);
-                        if(!!pageName && !!navItem){                             
+                        const navItem = !!pageName ? document.querySelector(`#side li a[href='${pageName}']`) : null;
+                        if(!!navItem){                             
                             document.querySelector(`#side li a.active`).classList.remove('active')
                             document.querySelector(`#side li a[href='${pageName}']`).classList.add('active')
                         }

@@ -12,12 +12,6 @@ if (document.location.hash && document.location.hash !== "#") {
 } else {
     // nameElement.focus();
 }
-setTimeout(() => {
-    (document.documentElement || document.body).scrollTo({
-        top: document.getElementById("certificat-blabla").offsetTop,
-        behavior: "smooth",
-    });
-}, 300);
 
 document.getElementById("certificat-date").textContent =
     new Date().toLocaleDateString();
@@ -94,14 +88,15 @@ async function copy() {
 
     try {
         await navigator.clipboard.writeText(document.location.href);
-        copyBtn.innerHTML = "<span>👌</span> Lien copié!";
+        copyBtn.innerHTML = "<span class='icon'>👌</span> Lien copié!";
     } catch (err) {
-        copyBtn.innerHTML = "<span>😭</span> Erreur à la copie du lien";
+        copyBtn.innerHTML =
+            "<span class='icon'>😭</span> Erreur à la copie du lien";
         console.error("Failed to copy: ", err);
     }
 
     setTimeout(() => {
-        copyBtn.innerHTML = "<span>🔗</span> Copier le lien";
+        copyBtn.innerHTML = "<span class='icon'>🔗</span> Copier le lien";
     }, 1000);
 }
 
@@ -112,14 +107,15 @@ async function copyImg() {
         const file = await screenshot();
         const data = [new ClipboardItem({ [file.type]: file })];
         await navigator.clipboard.write(data);
-        copyBtn.innerHTML = "<span>👌</span> Certif copié!";
+        copyBtn.innerHTML = "<span class='icon'>👌</span> Certif copié!";
     } catch (err) {
-        copyBtn.innerHTML = "<span>😭</span> Erreur à la copie du certif";
+        copyBtn.innerHTML =
+            "<span class='icon'>😭</span> Erreur à la copie du certif";
         console.error("Failed to copy: ", err);
     }
 
     setTimeout(() => {
-        copyBtn.innerHTML = "<span>📸</span> Copier le certificat";
+        copyBtn.innerHTML = "<span class='icon'>📸</span> Copier le certificat";
     }, 1000);
 }
 
