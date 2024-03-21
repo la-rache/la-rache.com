@@ -26,13 +26,16 @@
     }
 
     #side {
-        width: calc(100% - 20px);
-        position: absolute;
+        position: fixed;
         transform: translateX(100%);
         transition: 0.3s ease-in-out;
         background: white;
+        top: 48px;
         left: 0;
         z-index: 5;
+        overflow-y: auto;
+        width: calc(100% - 20px);
+        height: calc(100% - 48px);
     }
 
     #burgermenu-checkbox
@@ -64,6 +67,9 @@
     #burgermenu-checkbox:checked + #page #side {
         transform: translateX(0);
         box-shadow: 0 14px 12px 6px #0550a578;
+    }
+    #burgermenu-checkbox:checked + #page #main {
+        position: fixed;
     }
 
     img {

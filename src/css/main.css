@@ -158,18 +158,17 @@ a:hover {
     /*	background-image: url(../img/bg.png);*/
     margin: 0;
     padding: 1em 0 0 0;
+    display: flex;
 }
 
 #side {
     width: 180px;
-    float: left;
     margin: 0;
     padding: 5px 10px 5px 10px;
 }
 
 #main {
     width: 676px;
-    float: right;
     margin: 0;
     padding: 7px;
     text-align: justify;
