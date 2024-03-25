@@ -81,23 +81,17 @@
                 improve your experience.
             </p>
         <![endif]-->
-        <div id="fb-root"></div>
-        <script>
-            (function (d, s, id) {
-                let js;
-                const fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src =
-                    "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            })(document, "script", "facebook-jssdk");
-        </script>
-
+        <input type="checkbox" id="burgermenu-checkbox">
         <div id="page">
             <div id="top">
-                <h1>La-rache.com</h1>
+                <navbar>
+                <h1><a href=".">La-rache.com</a></h1>
+                <label for="burgermenu-checkbox">
+                    <span class="burgermenu-open">≡</span><span class="burgermenu-close">⨉</span>
+                     Menu
+                </label>
+            </navbar>
+                
                 <h2>
                     Bienvenue sur le site of the International Institute of La
                     RACHE
@@ -105,11 +99,12 @@
                 <hr />
             </div>
             <div id="mid">
+                
                 <div id="side">
                     <img class="logo" src="img/logo1.png" alt="logo" />
                     <ul class="zul">
-                        <li class="zli1 zon">
-                            <a href="index.html">Accueil / News</a>
+                        <li class="zli1">
+                            <a href="." class="active">Accueil / News</a>
                         </li>
                         <li class="zli1">
                             <a href="presentation.html">Présentation</a>
@@ -136,19 +131,25 @@
                         </li>
                         <li class="zli1"><a href="liens.html">Liens</a></li>
                     </ul>
-                    <img
+                    <script>
+                        const pageName = document.location.pathname.split("/").pop();
+                        const navItem = !!pageName ? document.querySelector(`#side li a[href='${pageName}']`) : null;
+                        if(!!navItem){                             
+                            document.querySelector(`#side li a.active`).classList.remove('active')
+                            document.querySelector(`#side li a[href='${pageName}']`).classList.add('active')
+                        }
+                    </script>
+                    <a href="/"><img
                         class="logo_web2_0"
                         src="img/larache-shield.svg"
                         alt="la-rache-badge"
-                    />
-                    <div
-                        class="fb-like"
-                        data-href="https://www.facebook.com/lamethoderache/"
-                        data-layout="button_count"
-                        data-action="like"
-                        data-show-faces="true"
-                        data-share="true"
-                    ></div>
-                </div>
+                    /></a>
+                    <a href="https://www.facebook.com/lamethoderache/" target="_blank" class="btn ">
+                        <img src="img/facebook.svg" alt="facebook logo" height="24" width="24"/>/lamethoderache
+                    </a>
+                    <a href="https://github.com/la-rache/la-rache.com" target="_blank" class="btn ">
+                        <img src="img/github.svg" alt="github logo" height="24" width="24"/>/larache
+                     </a>
+                                   </div>
                 <div id="main">
                 
