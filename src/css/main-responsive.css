@@ -20,7 +20,8 @@
     }
 
     label[for="burgermenu-checkbox"] {
-        display: inline-block;
+        display: flex;
+        align-items: center;
     }
 
     #side {

@@ -196,7 +196,6 @@ label[for="burgermenu-checkbox"] {
     user-select: none;
     background: #fff;
     color: #0550a5;
-    line-height: 1.5;
     text-underline-offset: 3px;
     padding-right: 0.5em;
     cursor: pointer;
@@ -208,7 +207,7 @@ label[for="burgermenu-checkbox"]:focus {
 }
 
 label[for="burgermenu-checkbox"] span {
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: bold;
 }
 
