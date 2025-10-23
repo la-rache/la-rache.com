@@ -135,17 +135,17 @@ a:hover {
     background-color: #fff;
     border: solid 1px #ccc;
     border-top: none;
-    width: 900px;
+    max-width: 1100px;
+    width: calc(100% - 40px);
     margin: 0 auto 16px auto;
     border-left: 1px solid #777;
     border-right: 1px solid #777;
-    padding: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
     text-align: left;
 }
 
 #top {
-    width: 900px;
-    height: 65px;
     background-color: #fff;
     border-bottom: none;
     margin: 0;
@@ -153,25 +153,35 @@ a:hover {
 }
 
 #mid {
-    width: 900px;
     border-bottom: 1px solid #ccc;
-    /*	background-image: url(../img/bg.png);*/
     margin: 0;
     padding: 1em 0 0 0;
     display: flex;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 #side {
-    width: 180px;
+    width: 220px;
+    flex: 0 0 220px;
     margin: 0;
     padding: 5px 10px 5px 10px;
 }
 
 #main {
-    width: 676px;
+    flex: 1 1 auto;
     margin: 0;
     padding: 7px;
     text-align: justify;
+}
+
+/* CSS variables for easier theming */
+:root{
+    --brand: #0550a5;
+    --brand-weak: #0550a578;
+    --muted: #777;
+    --bg: #fff;
+    --content-max: 1100px;
 }
 
 .break {
@@ -179,12 +189,12 @@ a:hover {
 }
 
 #bot {
-    width: 900px;
+    width: 100%;
     border-bottom: 1px solid #777;
     font-size: 75%;
     text-align: center;
     margin: 0;
-    papping: 0;
+    padding: 0;
     color: #225;
 }
 
@@ -243,21 +253,22 @@ label[for="burgermenu-checkbox"] span {
 }
 
 #side li a {
-    padding: 5px 0 5px 15px;
+    padding: 8px 12px;
     display: block;
     color: #ffffff;
-    background-color: #0550a5;
+    background-color: var(--brand);
     text-align: left;
-    border: 1px solid currentColor;
+    border-radius: 4px;
+    margin-bottom: 6px;
 }
 
 #side li a:hover,
 #side li a:focus {
     display: block;
-    background-color: #0550a578;
+    background-color: var(--brand-weak);
 }
 #side li a.active {
-    color: #0550a5;
+    color: var(--brand);
     background-color: #ffffff;
 }
 
@@ -272,7 +283,7 @@ button,
     user-select: none;
     padding: 5px;
     background: #ffffff82;
-    color: #0550a5;
+    color: var(--brand);
     border: 1px solid currentColor;
 }
 
@@ -280,13 +291,13 @@ button:hover,
 button:focus,
 .btn:hover,
 .btn:focus {
-    background-color: #0550a5;
+    background-color: var(--brand);
     color: #fff;
 }
 button:active,
 .btn:active {
-    box-shadow: inset 0px 0px 1px 2px rgb(255 255 255), 0px 0px 1px 1px #0550a5;
-    background-color: #0550a5;
+    box-shadow: inset 0px 0px 1px 2px rgb(255 255 255), 0px 0px 1px 1px var(--brand);
+    background-color: var(--brand);
     color: #fff;
 }
 
