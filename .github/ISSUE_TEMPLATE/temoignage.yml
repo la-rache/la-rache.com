@@ -1,0 +1,42 @@
+name: Témoignage
+description: Partagez votre expérience avec La RACHE
+title: "[Témoignage] "
+labels: ["témoignage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de partager votre expérience avec La RACHE ! Votre témoignage pourra être ajouté à la page des témoignages du site.
+
+  - type: input
+    id: nom
+    attributes:
+      label: Votre nom ou pseudonyme
+      description: Comment souhaitez-vous être identifié dans le témoignage ?
+      placeholder: ex. "Jean DUPONT, développeur" ou "jdoe, ancien stagiaire"
+    validations:
+      required: true
+
+  - type: textarea
+    id: temoignage
+    attributes:
+      label: Votre témoignage
+      description: Racontez-nous comment La RACHE a transformé votre pratique professionnelle !
+      placeholder: |
+        Parlez-nous de votre expérience avec La RACHE :
+        - Comment avez-vous découvert la méthode ?
+        - Quels bénéfices en avez-vous tirés ?
+        - Des anecdotes mémorables ?
+        - Vos recommandations pour les autres praticiens ?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: validation
+    attributes:
+      label: Validation
+      options:
+        - label: J'accepte que mon témoignage soit publié sur le site la-rache.com
+          required: true
+        - label: Mon témoignage est rédigé dans l'esprit satirique de La RACHE
+          required: true
