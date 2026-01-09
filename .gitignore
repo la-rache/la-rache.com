@@ -4,3 +4,8 @@ node_modules
 package-lock.json
 *.swp
 build
+
+# Development tools
+.claude/
+.urls
+CLAUDE.md

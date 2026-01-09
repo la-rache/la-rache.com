@@ -1,7 +1,0 @@
-# Local Servers
-# Last Updated:
-
-# Format: SERVICE_NAME=http://localhost:PORT
-# Example:
-# BACKEND=http://localhost:3000
-# FRONTEND=http://localhost:4321
