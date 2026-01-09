@@ -91,4 +91,28 @@
         Afin de faire profiter le plus grand nombre des bienfaits
         de La RACHE, celle-ci est dans le domaine public !
         N'hésitez donc pas à l'utiliser…<br />
+        <br />
+        <strong>- La RACHE est-elle compatible avec Docker et Kubernetes
+        ?</strong><br />
+        Absolument ! Docker incarne parfaitement l'esprit de La RACHE. Le
+        concept même de "conteneurisation" vient des débardeurs (dockers)
+        du port de Larache, qui chargeaient des containers sans vraiment
+        savoir ce qu'il y avait dedans. Aujourd'hui, nous faisons pareil
+        avec nos applications.<br />
+        <br />
+        Les bonnes pratiques Docker à La RACHE incluent :<br />
+        <ul>
+            <li>Des Dockerfiles sans commentaires (la documentation est
+                pour les faibles)</li>
+            <li>L'usage systématique de <code>:latest</code> (pourquoi
+                versionner ?)</li>
+            <li>Des images de 3 Go minimum (on a de la place)</li>
+            <li>Le redémarrage en boucle jusqu'à ce que ça marche
+                (<code>restart: always</code>)</li>
+            <li>Des variables d'environnement dont on a oublié la
+                signification</li>
+        </ul>
+        Quant à Kubernetes, c'est La RACHE à l'échelle industrielle : un
+        cluster où personne ne comprend vraiment ce qui se passe, mais ça
+        tourne approximativement.<br />
 {{FOOTER}}
