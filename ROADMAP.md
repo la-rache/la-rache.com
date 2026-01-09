@@ -10,6 +10,14 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 
 ### ✅ Récemment complété (Janvier 2026)
 
+**Phase 2 - Amélioration du contenu** (09/01/2026)
+- [x] **[Feature]** Page "Histoire du port de Larache" (1670-2026, 8 périodes historiques)
+- [x] **[Feature]** Timeline chronologique avec CSS (17 événements, style inline)
+- [x] **[Feature]** Refonte page Formations (3 niveaux RACHE-FL/AP/EM + Docker Legacy Award)
+- [x] **[Feature]** Success Stories (6 cas réels documentés : Knight Capital, GitLab, TSB, HealthCare.gov, AWS S3, Equifax)
+- [x] **[Feature]** Ajout des 3 nouvelles pages au menu de navigation
+- [x] **[Fix]** Correction "METODA Gilles" → "Gilles METODA"
+
 **Phase 1 - Quick Wins** (09/01/2026)
 - [x] **[Perf]** Lazy loading sur 18 images (-20-30% temps chargement)
 - [x] **[Perf]** Version WebP de preview.jpg créée (174 KB → 82 KB, -53%)
@@ -36,12 +44,9 @@ Tâches restantes (optionnelles) :
 - [ ] **[Perf]** Optimiser autres JPG/PNG avec compression moderne
 - [ ] **[Fix]** Corriger `lang=""` → `lang="fr"` dans header.html
 
-### Phase 2 : Amélioration du contenu (Priorité moyenne)
+### ~~Phase 2 : Amélioration du contenu~~ ✅ COMPLÉTÉ (09/01/2026)
 
-- [ ] **[Feature]** Page dédiée "Histoire du port de Larache"
-- [ ] **[Feature]** Section "Formations certifiantes" avec humour sur les certifications
-- [ ] **[Feature]** Galerie de "success stories" parodiques
-- [ ] **[Feature]** Timeline historique de La RACHE (1670 → aujourd'hui)
+Tâches restantes (optionnelles) :
 - [ ] **[Docs]** Guide de contribution pour les nouveaux témoignages
 - [ ] **[Feature]** Badge "Certifié La RACHE" téléchargeable (SVG)
 
@@ -106,12 +111,19 @@ Tâches restantes (optionnelles) :
 
 ## Historique des versions
 
+### v2.1.0 - 2026-01-09
+- Phase 2 complète : 4 nouvelles pages (Histoire, Timeline, Formations, Success Stories)
+- 521 lignes ajoutées (7 fichiers modifiés)
+- Success Stories basées sur 6 incidents réels documentés
+- Hooks Git améliorés (commit-msg + pre-commit)
+
 ### v2.0.0 - 2026-01-09
 - Refonte complète avec contenu Docker/Larache
+- Phase 1 Quick Wins : lazy loading, WebP, cleanup
 - Ajout template d'issue témoignages
 - Migration GitHub Actions v4
 - 6 issues fermées
-- CLAUDE.md et ROADMAP.md créés
+- ROADMAP.md créé
 
 ### v1.x - 2016-2024
 - Site initial avec Grunt.js
