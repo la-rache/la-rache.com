@@ -1,0 +1,157 @@
+{{HEADER}}
+<h1>Success Stories</h1>
+<h2>Cas d'école : quand La RACHE rencontre la réalité</h2>
+
+<p>
+Ces cas sont inspirés d'incidents réels documentés publiquement. Les noms ont été anonymisés mais les faits sont authentiques.
+</p>
+
+<hr />
+
+<h3>💰 Société de Trading Haute Fréquence - 440M$ en 45 minutes</h3>
+
+<p><strong>Contexte :</strong> Déploiement d'une nouvelle version du logiciel de trading algorithmique (inspiré de Knight Capital, 2012).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>Déploiement manuel sur 8 serveurs... 1 serveur oublié avec l'ancien code</li>
+    <li>Flag de debug réutilisé pour activer une nouvelle fonctionnalité</li>
+    <li>Code legacy de 2003 toujours présent « au cas où »</li>
+    <li>Déploiement en production à l'ouverture des marchés</li>
+    <li>Kill switch absent (« ça marchait bien avant »)</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+Le serveur oublié a activé le vieux code de test qui passait des ordres aléatoires. En 45 minutes : 4 millions d'ordres, 440 millions de dollars de pertes. La société a fait faillite 48h plus tard. Le trader qui a appuyé sur « stop » manuellement a été félicité pour sa réactivité.
+</p>
+
+<p><em>« Techniquement, le déploiement s'est bien passé sur 7 serveurs sur 8. C'est un taux de succès de 87,5%. »</em> - Responsable déploiement</p>
+
+<hr />
+
+<h3>🗄️ Plateforme de Gestion de Code Source - <code>rm -rf</code> en production</h3>
+
+<p><strong>Contexte :</strong> Incident de suppression accidentelle de la base de données principale (inspiré de GitLab, 2017).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>Réplication master-slave bugguée depuis des semaines (« on verra plus tard »)</li>
+    <li>Backups automatiques : non testés depuis 6 mois</li>
+    <li>Spam de réplication qui ralentit : un admin tape <code>rm -rf</code> sur... la mauvaise base</li>
+    <li>300 GB de données effacées en 5 minutes</li>
+    <li>Restauration en live streamée sur YouTube (transparence ++)</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+6h de site hors ligne. 5 000 projets perdus définitivement (backup corrompu). L'incident a été transformé en succès de communication : « Nous avons appris à faire des backups testés ». Le post-mortem public a reçu 50 000 likes.
+</p>
+
+<p><em>« Nous sommes passés de 0 à 1 backup fonctionnel. C'est une amélioration infinie en pourcentage. »</em> - CTO</p>
+
+<hr />
+
+<h3>🏦 Grande Banque Britannique - Migration qui coûte 1,9 milliard</h3>
+
+<p><strong>Contexte :</strong> Migration du système bancaire vers une nouvelle plateforme (inspiré de TSB Bank, 2018).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>Migration de 1,3 milliard de comptes le week-end du 20 avril</li>
+    <li>Tests de charge : 1 semaine avant go-live (« ça devrait suffire »)</li>
+    <li>Données clients migrées sans vérification de cohérence</li>
+    <li>Rollback prévu... mais techniquement impossible après 2h</li>
+    <li>Hotline dimensionnée pour 500 appels/jour, 70 000 reçus</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+1,9 million de clients sans accès à leur compte pendant des semaines. Certains voyaient les comptes d'autres clients (RGPD friendly). Bug tellement profond que revenir en arrière était impossible. Coût total : 1,9 milliard £ (amendes + compensations + système). Le PDG a démissionné... avec une prime de départ.
+</p>
+
+<p><em>« Nous avons réussi la migration. Que le système ne fonctionne pas est un détail d'implémentation. »</em> - Directeur IT</p>
+
+<hr />
+
+<h3>🏛️ Site Web Gouvernemental - Lancement historique</h3>
+
+<p><strong>Contexte :</strong> Lancement d'un portail national d'assurance santé (inspiré de HealthCare.gov, 2013).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>55 contractors différents, coordination « agile »</li>
+    <li>Architecture: 55 composants, 0 test d'intégration bout-en-bout</li>
+    <li>Capacité prévue : 50 000 utilisateurs simultanés. Attendus : 250 000</li>
+    <li>Premier test de charge complet : 1 semaine avant le lancement</li>
+    <li>Serveurs crashent à 1 000 utilisateurs. Solution : relancer toutes les 6h</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+Le jour J : 6 personnes seulement réussissent à créer un compte. Site inutilisable pendant 2 mois. 500 millions $ dépensés avant le lancement, 500 millions $ de plus pour le réparer. 3 ans plus tard, le site fonctionne correctement. Célébré comme une victoire de la persévérance.
+</p>
+
+<p><em>« Nous avons créé des emplois pour des milliers de développeurs pendant 3 ans. Mission accomplie. »</em> - Chef de projet</p>
+
+<hr />
+
+<h3>☁️ Fournisseur Cloud - Une typo qui casse Internet</h3>
+
+<p><strong>Contexte :</strong> Maintenance de routine sur un service de stockage cloud (inspiré de AWS S3 outage, 2017).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>Commande de debug pour retirer « quelques serveurs » d'un cluster</li>
+    <li>Typo dans la commande : retire TOUS les serveurs au lieu de quelques-uns</li>
+    <li>Système de billing dépend de S3 → impossible de redémarrer les serveurs (facturation cassée)</li>
+    <li>Reboot complet : jamais testé (serveurs up depuis 3 ans)</li>
+    <li>Documentation de recovery : stockée... sur S3</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+4h d'outage. 54% du web américain en rade (20% du trafic Internet mondial). Des millions de sites IoT, apps mobiles, services en ligne cassés. Perte estimée : 150 millions $ pour les clients. Explication officielle : « erreur humaine ». La commande incriminée a été retirée du playbook. L'ingénieur n'a pas été licencié (« il ne refera pas cette erreur »).
+</p>
+
+<p><em>« Nous avons identifié qu'il ne fallait pas tout éteindre en même temps. Précieux enseignement. »</em> - VP Engineering</p>
+
+<hr />
+
+<h3>🔒 Agence de Crédit - 147 millions de données volées</h3>
+
+<p><strong>Contexte :</strong> Faille de sécurité non corrigée pendant 5 mois (inspiré de Equifax, 2017).</p>
+
+<p><strong>Approche La RACHE :</strong></p>
+<ul>
+    <li>Vulnérabilité Apache Struts publiée le 7 mars, patch disponible immédiatement</li>
+    <li>Email de sécurité perdu dans la masse (« encore une CVE... »)</li>
+    <li>147 millions d'enregistrements accessibles pendant 76 jours avant détection</li>
+    <li>Certificat SSL expiré sur le site de vérification de fuite (ironie++)</li>
+    <li>Données volées : noms, SSN, dates de naissance, adresses, permis de conduire</li>
+</ul>
+
+<p><strong>Résultat :</strong></p>
+<p>
+Découverte du hack en juillet. Annonce publique en septembre (attendre que le cours de bourse se stabilise). 3 executives démissionnent... après avoir vendu leurs actions. Amende : 700 millions $. Compensation : surveillance de crédit gratuite (fournie par... Equifax). Le CISO avait un diplôme en... composition musicale.
+</p>
+
+<p><em>« Nous avons appris l'importance de lire les emails de sécurité. Expérience enrichissante. »</em> - Equipe Sécurité</p>
+
+<hr />
+
+<h2>Votre success story ici ?</h2>
+
+<p>
+Vous avez brillamment échoué avec succès grâce à La RACHE ? Partagez votre témoignage !
+</p>
+
+<p>
+📧 <a href="mailto:success-stories@la-rache.com">success-stories@la-rache.com</a>
+</p>
+
+<p><br /></p>
+
+<p><em>Tous les témoignages sont authentiques. Les noms ont été changés pour protéger les coupables.</em></p>
+
+{{FOOTER}}
