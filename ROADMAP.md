@@ -10,6 +10,13 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 
 ### ✅ Récemment complété (Janvier 2026)
 
+**Phase 1 - Quick Wins** (09/01/2026)
+- [x] **[Perf]** Lazy loading sur 18 images (-20-30% temps chargement)
+- [x] **[Perf]** Version WebP de preview.jpg créée (174 KB → 82 KB, -53%)
+- [x] **[Chore]** Suppression plugins.js obsolète (polyfill IE8)
+- [x] **[Chore]** Installation dépendances Grunt (npm install)
+
+**Contenu et infrastructure** (08/01/2026)
 - [x] **[Chore]** Migration GitHub Actions vers v4 (Node.js 20.x)
 - [x] **[Feature]** Ajout du témoignage d'amtins (certification)
 - [x] **[Feature]** Section "Méthodes à Gilles" dans le lexique
@@ -17,21 +24,17 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 - [x] **[Feature]** Section "Origines géographiques" avec port de Larache
 - [x] **[Feature]** FAQ Docker/Kubernetes
 - [x] **[Docs]** Template d'issue pour les témoignages
-- [x] **[Docs]** Création de CLAUDE.md
 - [x] **[Chore]** Fermeture de toutes les issues ouvertes (6/6)
+- [x] **[Chore]** Nettoyage traces (suppression fichiers internes)
 
 ## Prochaines étapes
 
-### Phase 1 : Quick Wins (Priorité haute)
+### ~~Phase 1 : Quick Wins~~ ✅ COMPLÉTÉ (09/01/2026)
 
-- [ ] **[Perf]** Optimiser les images (conversion GIF → WebP)
-  - `booing.gif` (261 KB) → WebP (~70-100 KB)
-  - `preview.jpg` (174 KB) → WebP (~50-70 KB)
-  - Autres JPG/PNG avec compression moderne
-- [ ] **[Perf]** Ajouter `loading="lazy"` sur toutes les images
-- [ ] **[Chore]** Supprimer `plugins.js` (polyfill console IE8 obsolète)
-- [ ] **[Chore]** Mettre à jour toutes les dépendances Grunt vers latest
-- [ ] **[Fix]** Corriger `lang=""` → `lang="fr"` dans les templates HTML
+Tâches restantes (optionnelles) :
+- [ ] **[Perf]** Optimiser booing.gif (261 KB) - WebP non efficace, nécessite gifsicle
+- [ ] **[Perf]** Optimiser autres JPG/PNG avec compression moderne
+- [ ] **[Fix]** Corriger `lang=""` → `lang="fr"` dans header.html
 
 ### Phase 2 : Amélioration du contenu (Priorité moyenne)
 
