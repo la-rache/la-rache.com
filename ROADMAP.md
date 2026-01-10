@@ -1,6 +1,6 @@
 # Roadmap - la-rache.com
 
-> Dernière mise à jour : 2026-01-09
+> Dernière mise à jour : 2026-01-10
 
 ## Vision
 
@@ -9,6 +9,16 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 ## État actuel du projet
 
 ### ✅ Récemment complété (Janvier 2026)
+
+**Phase 3 - Modernisation technique** (10/01/2026)
+- [x] **[Refactor]** Migration Grunt → Eleventy 3.1.2
+  - Templates Nunjucks modulaires (base.njk, sidebar.njk, footer.njk)
+  - 15 pages migrées (.html → .njk)
+  - Build 50% plus rapide (0.10s vs 5-7s)
+  - Taille réduite -41% (1.7M vs 2.9M)
+  - Hot reload sur port 8042
+  - Navigation active automatique
+  - Workflow GitHub Actions adapté
 
 **Phase 2 - Amélioration du contenu** (09/01/2026)
 - [x] **[Feature]** Page "Histoire du port de Larache" (1670-2026, 8 périodes historiques)
@@ -50,12 +60,9 @@ Tâches restantes (optionnelles) :
 - [ ] **[Docs]** Guide de contribution pour les nouveaux témoignages
 - [ ] **[Feature]** Badge "Certifié La RACHE" téléchargeable (SVG)
 
-### Phase 3 : Modernisation technique (Priorité moyenne)
+### ~~Phase 3 : Modernisation technique~~ ✅ COMPLÉTÉ (10/01/2026)
 
-- [ ] **[Refactor]** Migration Grunt → Eleventy
-  - Remplacer système `{{TOKEN}}` par templates Nunjucks
-  - Build incrémental plus rapide
-  - Hot Module Replacement (HMR)
+Tâches restantes (optionnelles) :
 - [ ] **[Refactor]** Convertir CSS → SCSS
   - Remplacer `normalize.css` (424 lignes) par `modern-normalize` (24 lignes)
   - Consolider `main-responsive.css` avec mixins
@@ -110,6 +117,15 @@ Tâches restantes (optionnelles) :
 - [ ] **[Feature]** Sondage annuel "État de La RACHE"
 
 ## Historique des versions
+
+### v3.0.0 - 2026-01-10
+- Migration Grunt → Eleventy 3.1.2
+- Templates Nunjucks modulaires (base.njk, sidebar.njk, footer.njk)
+- 15 pages migrées (.html → .njk)
+- Build 50% plus rapide, taille -41%
+- Hot reload, navigation active automatique
+- Workflow GitHub Actions mis à jour
+- README.md modernisé
 
 ### v2.1.0 - 2026-01-09
 - Phase 2 complète : 4 nouvelles pages (Histoire, Timeline, Formations, Success Stories)
