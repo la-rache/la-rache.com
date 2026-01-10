@@ -27,6 +27,7 @@ permalink: /certificat.html
                         </div>
                     </h1>
                     <div>100% de réussite (ou presque) pour</div>
+                    <label for="certificat-name" class="sr-only">Prénom et nom</label>
                     <input
                         type="text"
                         id="certificat-name"
@@ -34,6 +35,7 @@ permalink: /certificat.html
                         spellcheck="false"
                         placeholder="Prénom NOM"
                         required
+                        aria-label="Prénom et nom pour le certificat"
                     />
                 </div>
 
@@ -90,6 +92,7 @@ permalink: /certificat.html
         <button type="button" onclick="download()">
             <span class="icon">📸</span> Enregistrer
         </button>
+        <button type="submit" class="sr-only">Valider le certificat</button>
     </p>
 </form>
 <link rel="stylesheet" href="css/certificat.css" />

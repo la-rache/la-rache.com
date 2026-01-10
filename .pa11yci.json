@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 10000,
+    "wait": 500,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:8042/",
+    "http://localhost:8042/presentation.html",
+    "http://localhost:8042/histoire-larache.html",
+    "http://localhost:8042/timeline.html",
+    "http://localhost:8042/faq.html",
+    "http://localhost:8042/formations.html",
+    "http://localhost:8042/certificat.html",
+    "http://localhost:8042/success-stories.html",
+    "http://localhost:8042/images.html",
+    "http://localhost:8042/temoignages.html"
+  ]
+}

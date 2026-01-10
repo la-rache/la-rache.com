@@ -31,6 +31,12 @@ Visualisation du code compilé
 ---------------------
 * Ouvrez ```_site/index.html``` avec votre navigateur préféré
 
+Tests d'accessibilité
+---------------------
+* Démarrez le serveur local : ```npm run dev```
+* Dans un autre terminal, lancez l'audit : ```npm run test:a11y```
+* L'audit vérifie 10 pages principales selon le standard WCAG 2.1 AA
+
 Partage de vos modifications
 ----------------------------
 * Si vous avez ajouté de nouveaux fichiers : ```git add <fichier>```
