@@ -1,6 +1,6 @@
 # la-rache.com
 
-[![Build & deploy](https://github.com/la-rache/la-rache.com/actions/workflows/npm-grunt.yml/badge.svg)](https://github.com/la-rache/la-rache.com/actions/workflows/npm-grunt.yml)
+[![Build & deploy](https://github.com/la-rache/la-rache.com/actions/workflows/eleventy.yml/badge.svg)](https://github.com/la-rache/la-rache.com/actions/workflows/eleventy.yml)
 
 Voici comment contribuer au site web [la-rache.com](https://www.la-rache.com)
 
