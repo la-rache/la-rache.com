@@ -9,16 +9,16 @@ Installation de l'environnement de travail
 * Forkez le projet : https://github.com/la-rache/la-rache.com
 * Clonez votre fork : ```git clone https://github.com/<votre_user_github>/la-rache.com.git```
 * Allez dans le répertoire de travail : ```cd la-rache.com```
-* Installez Grunt : ```npm install -g grunt-cli```
 * Installez les dépendances du projet : ```npm install```
-* Lancer le serveur local : ```npm run serve```
+* Lancer le serveur local : ```npm run dev```
   *  cela ouvrira la page http://localhost:8042
-  *  et rechargera automatiquement la page à chaque changement de code (livereload)
+  *  et rechargera automatiquement la page à chaque changement de code (hot reload)
 
 Modification des sources
 ------------------------
-* Éditez le début de page et le pied de page dans ```src/parts```
-* Éditez les corps des pages dans ```src/*.html```
+* Éditez les templates (header, sidebar, footer) dans ```src/_includes/partials/```
+* Éditez le layout principal dans ```src/_includes/layouts/base.njk```
+* Éditez les pages dans ```src/*.njk```
 * Éditez les images dans ```src/img```
 * Éditez les css dans ```src/css```
 * Éditez les js dans ```src/js```
@@ -29,7 +29,7 @@ Génération du code HTML
 
 Visualisation du code compilé
 ---------------------
-* Ouvrez ```build/index.html``` avec votre navigateur préféré
+* Ouvrez ```_site/index.html``` avec votre navigateur préféré
 
 Partage de vos modifications
 ----------------------------

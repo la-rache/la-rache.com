@@ -1,4 +1,4 @@
-name: Build à La Rache
+name: Build & Deploy (Eleventy)
 
 on:
   workflow_dispatch:
@@ -29,12 +29,12 @@ jobs:
     - name: Build
       run: |
         npm install
-        grunt
+        npm run build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: "./build"
+        path: "./_site"
 
     - name: Deploy to GitHub Pages
       id: deployment

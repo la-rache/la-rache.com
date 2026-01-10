@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Site web la-rache.com",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "grunt": "^1.4.1",
     "grunt-cache-bust": "^1.7.0",
     "grunt-cli": "^1.4.3",
@@ -17,9 +18,11 @@
     "grunt-text-replace": "^0.4.0"
   },
   "scripts": {
+    "dev": "eleventy --serve --port=8042",
+    "build": "eleventy",
     "serve": "grunt serve",
     "test": "grunt test",
-    "build": "grunt"
+    "build:grunt": "grunt"
   },
   "repository": {
     "type": "git",

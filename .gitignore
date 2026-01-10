@@ -4,6 +4,8 @@ node_modules
 package-lock.json
 *.swp
 build
+_site
+.cache
 
 # Development tools
 .claude/

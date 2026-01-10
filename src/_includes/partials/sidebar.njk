@@ -1,0 +1,42 @@
+<div id="side">
+    <img class="logo" src="img/logo1.png" alt="logo" />
+
+    {% set navItems = [
+        {url: "/", label: "Accueil / News"},
+        {url: "/presentation.html", label: "Présentation"},
+        {url: "/histoire-larache.html", label: "Histoire du port de Larache"},
+        {url: "/timeline.html", label: "Chronologie"},
+        {url: "/faq.html", label: "La F.A.Q"},
+        {url: "/lexique.html", label: "Lexique"},
+        {url: "/publications.html", label: "Publications"},
+        {url: "/consulting.html", label: "Consulting"},
+        {url: "/formations.html", label: "Formations"},
+        {url: "/certificat.html", label: "Certificat de reussite"},
+        {url: "/success-stories.html", label: "Success Stories"},
+        {url: "/images.html", label: "En images"},
+        {url: "/temoignages.html", label: "Témoignages"},
+        {url: "/liens.html", label: "Liens"}
+    ] %}
+
+    <ul class="zul">
+        {% for item in navItems %}
+        <li class="zli1">
+            <a href="{{ item.url }}" {% if page.url == item.url or (item.url == "/" and page.url == "/index.html") %}class="active"{% endif %}>
+                {{ item.label }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/"><img
+        class="logo_web2_0"
+        src="img/larache-shield.svg"
+        alt="la-rache-badge"
+    /></a>
+    <a href="https://www.facebook.com/lamethoderache/" target="_blank" rel="noopener noreferrer" class="btn ">
+        <img src="img/facebook.svg" alt="facebook logo" height="24" width="24"/>/lamethoderache
+    </a>
+    <a href="https://github.com/la-rache/la-rache.com" target="_blank" rel="noopener noreferrer" class="btn ">
+        <img src="img/github.svg" alt="github logo" height="24" width="24"/>/larache
+    </a>
+</div>
