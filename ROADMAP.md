@@ -11,6 +11,11 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 ### ✅ Récemment complété (Janvier 2026)
 
 **Phase 4 - Accessibilité** (10/01/2026)
+- [x] **[A11y]** Ajouter `aria-expanded` sur le burger menu
+  - Attribut aria-expanded="false" ajouté au label
+  - Attribut aria-controls="side" pour lier au menu
+  - JavaScript toggle aria-expanded en fonction de l'état du checkbox
+  - Validation HTML : 0 erreurs
 - [x] **[A11y]** Améliorer les textes alternatifs des images
   - 24 images analysées et alt texts améliorés
   - Alt texts descriptifs contextualisés pour lecteurs d'écran
@@ -82,7 +87,7 @@ Tâches restantes (optionnelles) :
 ### Phase 4 : Accessibilité & SEO (Priorité basse)
 
 - [x] **[A11y]** Améliorer les textes alternatifs des images
-- [ ] **[A11y]** Ajouter `aria-expanded` sur le burger menu
+- [x] **[A11y]** Ajouter `aria-expanded` sur le burger menu
 - [ ] **[A11y]** Support clavier complet (Escape pour fermer modales)
 - [ ] **[A11y]** Audit avec pa11y-ci
 - [ ] **[SEO]** Rich snippets (JSON-LD pour articles)
