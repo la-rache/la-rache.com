@@ -11,6 +11,11 @@ Maintenir et faire évoluer le site satirique de référence sur la méthodologi
 ### ✅ Récemment complété (Janvier 2026)
 
 **Phase 4 - Accessibilité** (10/01/2026)
+- [x] **[A11y]** Support clavier complet (Escape pour fermer le menu)
+  - Touche Escape ferme le burger menu et retourne le focus au bouton
+  - Touches Enter/Space togglent le menu (support role="button")
+  - Attributs role="button" et tabindex="0" ajoutés au label
+  - Navigation clavier 100% fonctionnelle
 - [x] **[A11y]** Ajouter `aria-expanded` sur le burger menu
   - Attribut aria-expanded="false" ajouté au label
   - Attribut aria-controls="side" pour lier au menu
@@ -88,7 +93,7 @@ Tâches restantes (optionnelles) :
 
 - [x] **[A11y]** Améliorer les textes alternatifs des images
 - [x] **[A11y]** Ajouter `aria-expanded` sur le burger menu
-- [ ] **[A11y]** Support clavier complet (Escape pour fermer modales)
+- [x] **[A11y]** Support clavier complet (Escape pour fermer modales)
 - [ ] **[A11y]** Audit avec pa11y-ci
 - [ ] **[SEO]** Rich snippets (JSON-LD pour articles)
 - [ ] **[SEO]** Sitemap.xml généré automatiquement

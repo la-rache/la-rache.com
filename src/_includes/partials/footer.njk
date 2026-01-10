@@ -1,13 +1,33 @@
             <div class="break"></div>
 
     <script>
-      // Burger menu aria-expanded toggle
+      // Burger menu accessibility
       (function() {
         var checkbox = document.getElementById('burgermenu-checkbox');
         var label = document.querySelector('label[for="burgermenu-checkbox"]');
+
         if (checkbox && label) {
+          // Toggle aria-expanded when menu opens/closes
           checkbox.addEventListener('change', function() {
             label.setAttribute('aria-expanded', this.checked ? 'true' : 'false');
+          });
+
+          // Close menu with Escape key
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && checkbox.checked) {
+              checkbox.checked = false;
+              label.setAttribute('aria-expanded', 'false');
+              label.focus(); // Return focus to toggle button
+            }
+          });
+
+          // Support Enter/Space on label (for role="button")
+          label.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              checkbox.checked = !checkbox.checked;
+              label.setAttribute('aria-expanded', checkbox.checked ? 'true' : 'false');
+            }
           });
         }
       })();
