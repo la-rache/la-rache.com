@@ -81,5 +81,8 @@
 
             {% include "partials/footer.njk" %}
         </div>
+        {% if dicode %}
+        <script src="https://dicode.fr/widget/dicode.js" defer data-trigger="manual" data-display="popover" data-branding="off"></script>
+        {% endif %}
     </body>
 </html>

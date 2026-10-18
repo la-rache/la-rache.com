@@ -517,3 +517,8 @@ navbar {
     display: flex;
     justify-content: space-between;
 }
+
+/* Mots liés au dictionnaire Dicode : même police et couleur que le texte, pointillé discret */
+a.dicode, a.dicode:visited { color: inherit; font: inherit; text-decoration: underline dotted; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a.dicode:hover { color: inherit; text-decoration-style: solid; }
+@media print { a.dicode[href]:after { content: none; } }
